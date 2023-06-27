@@ -1,10 +1,10 @@
 import React from 'react';
-import Visual from './pages/home/Visual';
+import GlobalStyle from './styled/Global';
 
 const App = () => {
    return (
       <div>
-         <Visual />
+         <GlobalStyle />
       </div>
    );
 };
