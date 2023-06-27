@@ -2,7 +2,8 @@ import React, { memo, useState } from 'react';
 import { useAxios } from '../../hooks/useAxios';
 import Contents from './Contents';
 import Popup from './Popup';
-// import Visual from './pages/home/Visual';
+// import Visual from './Visual';
+import Footer from '../../components/Footer';
 
 const Home = memo(() => {
    const { data, loading, error } = useAxios(
@@ -14,7 +15,8 @@ const Home = memo(() => {
    return (
       <div>
          {/* <Visual /> */}
-         <Contents data={data} />
+         {/* <Contents data={data} /> */}
+         <Footer />
          {isPopUp && <Popup />}
       </div>
    );
