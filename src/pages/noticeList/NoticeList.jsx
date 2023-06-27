@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
-const Info = memo(() => {
+const NoticeList = memo(() => {
    return <div></div>;
 });
 
-export default Info;
+export default NoticeList;
