@@ -15,6 +15,9 @@ const GlobalStyle = createGlobalStyle`
   a {text-decoration: none;
     color: #333
   }
+  li {
+    list-style: none;
+  }
 `;
 
 export default GlobalStyle;
