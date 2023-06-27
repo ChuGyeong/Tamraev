@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
-const CategoryMenu = memo(() => {
+const NoticeList = memo(() => {
    return <div></div>;
 });
 
-export default CategoryMenu;
+export default NoticeList;
