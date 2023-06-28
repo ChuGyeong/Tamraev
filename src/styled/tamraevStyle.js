@@ -174,7 +174,7 @@ export const FooterContainer = styled.div`
          padding: 0 20px;
          position: relative;
          background: #303030;
-         z-index: 10;
+         z-index: 1;
          a {
             font-size: 18px;
             color: #fff;
@@ -207,9 +207,10 @@ export const FooterContainer = styled.div`
 export const NavContainer = styled.div`
    box-sizing: border-box;
    width: 100vw;
-   position: absolute;
+   position: relative;
    top: 0;
    left: 0;
+   z-index: 5;
    /* background: transparent; */
    .bg {
       width: 100vw;
@@ -223,95 +224,97 @@ export const NavContainer = styled.div`
          display: block;
       }
    }
-   .gnb {
-      background: red;
-      padding: 34px 0;
-      width: 1200px;
+   i {
       position: absolute;
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%);
-      i {
-         position: absolute;
-         top: 50%;
-         right: 30px;
-         transform: translateY(-50%);
-         z-index: 500;
-         .hamburger {
-            cursor: pointer;
-            &:hover .line:nth-child(1) {
-               -webkit-transform: translateY(10px);
-               -ms-transform: translateY(10px);
-               -o-transform: translateY(10px);
-               transform: translateY(10px);
-            }
+      top: 50px;
+      left: calc(50% + 550px);
+      transform: translateY(-50%);
+      z-index: 10;
+      .hamburger {
+         cursor: pointer;
+         &:hover .line:nth-child(1) {
+            -webkit-transform: translateY(10px);
+            -ms-transform: translateY(10px);
+            -o-transform: translateY(10px);
+            transform: translateY(10px);
+         }
 
-            &:hover .line:nth-child(3) {
-               -webkit-transform: translateY(-10px);
-               -ms-transform: translateY(-10px);
-               -o-transform: translateY(-10px);
-               transform: translateY(-10px);
-            }
-            &.is-active {
-               -webkit-transition: all 0.3s ease-in-out;
-               -o-transition: all 0.3s ease-in-out;
-               transition: all 0.3s ease-in-out;
-               -webkit-transition-delay: 0.6s;
-               -o-transition-delay: 0.6s;
-               transition-delay: 0.6s;
-               -webkit-transform: rotate(45deg);
-               -ms-transform: rotate(45deg);
-               -o-transform: rotate(45deg);
-               transform: rotate(45deg);
-               .line:nth-child(1),
-               .line:nth-child(3) {
-                  -webkit-transition-delay: 0.3s;
-                  -o-transition-delay: 0.3s;
-                  transition-delay: 0.3s;
-               }
-               .line:nth-child(1) {
-                  -webkit-transform: translateY(9px);
-                  -ms-transform: translateY(9px);
-                  -o-transform: translateY(9px);
-                  transform: translateY(9px);
-               }
-               .line:nth-child(2) {
-                  width: 0;
-               }
-               .line:nth-child(3) {
-                  -webkit-transform: translateY(-9px) rotate(90deg);
-                  -ms-transform: translateY(-9px) rotate(90deg);
-                  -o-transform: translateY(-9px) rotate(90deg);
-                  transform: translateY(-9px) rotate(90deg);
-               }
-            }
-
+         &:hover .line:nth-child(3) {
+            -webkit-transform: translateY(-10px);
+            -ms-transform: translateY(-10px);
+            -o-transform: translateY(-10px);
+            transform: translateY(-10px);
+         }
+         &.is-active {
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            -webkit-transition-delay: 0.6s;
+            -o-transition-delay: 0.6s;
+            transition-delay: 0.6s;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
             .line {
-               width: 30px;
-               height: 3px;
-               background-color: #002c5f;
-               display: block;
-               margin-bottom: 6px;
-               -webkit-transition: all 0.3s ease-in-out;
-               -o-transition: all 0.3s ease-in-out;
-               transition: all 0.3s ease-in-out;
-               &:last-child {
-                  margin-bottom: 0;
-               }
+               background: #000;
+            }
+            .line:nth-child(1),
+            .line:nth-child(3) {
+               -webkit-transition-delay: 0.3s;
+               -o-transition-delay: 0.3s;
+               transition-delay: 0.3s;
+            }
+            .line:nth-child(1) {
+               -webkit-transform: translateY(9px);
+               -ms-transform: translateY(9px);
+               -o-transform: translateY(9px);
+               transform: translateY(9px);
+            }
+            .line:nth-child(2) {
+               width: 0;
+            }
+            .line:nth-child(3) {
+               -webkit-transform: translateY(-9px) rotate(90deg);
+               -ms-transform: translateY(-9px) rotate(90deg);
+               -o-transform: translateY(-9px) rotate(90deg);
+               transform: translateY(-9px) rotate(90deg);
+            }
+         }
+
+         .line {
+            width: 30px;
+            height: 3px;
+            background-color: ${props => props.line_color};
+            display: block;
+            margin-bottom: 6px;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            &:last-child {
+               margin-bottom: 0;
             }
          }
       }
+   }
+   .gnb {
+      background: transparent;
+      padding: 34px 0;
+      width: 1200px;
+      position: relative;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      margin-bottom: ${props => props.nav_bottom_margin};
    }
    .scrollNav {
       width: 100%;
       height: 700px;
       transition: 0.3s;
-      overflow: hidden;
       display: flex;
       position: absolute;
       left: 0;
       top: -700px;
-      background: green;
       .img-box {
          width: 50%;
          height: 100%;
@@ -338,10 +341,34 @@ export const NavContainer = styled.div`
                width: 460px;
                padding: 40px 0 38px;
                border-top: 1px solid #e5e5e5;
+               &:first-child {
+                  border-top: none;
+               }
                a {
                   font-size: 40px;
                   padding-left: 20px px;
                   position: relative;
+                  &::after {
+                     content: '';
+                     opacity: 0;
+                     position: absolute;
+                     left: -20px;
+                     top: 30px;
+                     display: block;
+                     width: 10px;
+                     height: 10px;
+                     border-radius: 50%;
+                     background: #007fa8;
+                     transition: 0.5s ease-out;
+                  }
+                  &:hover,
+                  &.on {
+                     font-weight: 600;
+                     &::after {
+                        opacity: 1;
+                        top: 10px;
+                     }
+                  }
                }
             }
          }

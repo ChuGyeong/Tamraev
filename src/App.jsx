@@ -5,18 +5,19 @@ import Info from './pages/info/Info';
 import NoticeList from './pages/noticeList/NoticeList';
 import Home from './pages/home/Home';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 
 const App = () => {
    return (
       <>
          <GlobalStyle />
          <BrowserRouter>
-            <Nav />
             <Routes>
                <Route path="/" element={<Home />} />
                <Route path="info" element={<Info />} />
-               <Route path="NoticeList" element={<NoticeList />} />
+               <Route path="noticeList" element={<NoticeList />} />
             </Routes>
+            <Footer />
          </BrowserRouter>
       </>
    );

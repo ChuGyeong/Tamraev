@@ -3,7 +3,7 @@ import { useAxios } from '../../hooks/useAxios';
 import Contents from './Contents';
 import Popup from './Popup';
 import Visual from './Visual';
-import Footer from '../../components/Footer';
+import Nav from '../../components/Nav';
 
 const Home = memo(() => {
    const { data, loading, error } = useAxios(
@@ -20,9 +20,9 @@ const Home = memo(() => {
 
    return (
       <div>
+         <Nav isMain={true} />
          <Visual />
-         <Contents data={data} onPopUp={onPopUp} />
-         <Footer />
+         {/* <Contents data={data} onPopUp={onPopUp} /> */}
          {isPopUp && <Popup popUpItem={popUpItem} setIsPopUp={setIsPopUp} />}
       </div>
    );

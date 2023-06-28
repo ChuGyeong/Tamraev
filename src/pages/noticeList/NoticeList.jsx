@@ -1,7 +1,13 @@
 import React, { memo } from 'react';
+import Nav from '../../components/Nav';
 
 const NoticeList = memo(() => {
-   return <div></div>;
+   return (
+      <div>
+         <Nav />
+         NoticeList
+      </div>
+   );
 });
 
 export default NoticeList;
