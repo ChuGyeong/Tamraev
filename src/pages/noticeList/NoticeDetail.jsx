@@ -1,9 +1,10 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import { NoticeDetailBox } from '../../styled/tamraevStyle';
 import Nav from '../../components/Nav';
 import { useAxios } from '../../hooks/useAxios';
 import { useParams } from 'react-router-dom';
 import SlideImg from '../../components/SlideImg';
+import { Link } from 'react-router-dom';
 
 const NoticeDetail = memo(() => {
    const {
@@ -48,13 +49,25 @@ const NoticeDetail = memo(() => {
                   </div>
                ))}
             <div className="paging">
-               <button className="btn prev">
-                  <i className="xi-angle-left"></i>이전글
+               {noticeID > 1 && (
+                  <button className="btn prev">
+                     <Link to={`/noticeDetail/${noticeID - 1}`}>
+                        <i className="xi-angle-left"></i>이전글
+                     </Link>
+                  </button>
+               )}
+
+               <button className="list">
+                  <Link to={`/noticeList`}>목록보기</Link>
                </button>
-               <button className="list">목록보기</button>
-               <button className="btn next">
-                  다음글<i className="xi-angle-right"></i>
-               </button>
+
+               {noticeID < noticeData.length && (
+                  <button className="btn next">
+                     <Link to={`/noticeDetail/${Number(noticeID) + 1}`}>
+                        다음글<i className="xi-angle-right"></i>
+                     </Link>
+                  </button>
+               )}
             </div>
          </div>
       </NoticeDetailBox>

@@ -597,10 +597,19 @@ export const NoticeDetailBox = styled.div`
             font-size: 18px;
             height: 55px;
             cursor: pointer;
+
             &.list {
                padding: 0 70px;
                color: #fff;
                background: #002c5f;
+               a {
+                  width: 100%;
+                  height: 100%;
+                  color: #fff;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+               }
             }
             &.btn {
                position: absolute;

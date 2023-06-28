@@ -1,7 +1,8 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import Nav from '../../components/Nav';
 import { NoticeListContainer } from '../../styled/tamraevStyle';
 import { useAxios } from '../../hooks/useAxios';
+import { Link } from 'react-router-dom';
 
 const NoticeList = memo(() => {
    const {
@@ -11,7 +12,14 @@ const NoticeList = memo(() => {
    } = useAxios(
       'https://gist.githubusercontent.com/ChuGyeong/df4f59353713d0b3cdcfeb7ccb1e7478/raw/564a199cb321dd07add3f3054c607e5cf810d70e/noticeList.json',
    );
-
+   const [data, setData] = useState(noticeData || []);
+   //  접속시 조회수 증가
+   const updateView = id => {
+      setData(data.map(item => (item.id === id ? { ...item, view: item.view + 1 } : item)));
+   };
+   useEffect(() => {
+      setData(noticeData);
+   }, [noticeData]);
    return (
       <NoticeListContainer>
          <Nav />
@@ -34,7 +42,7 @@ const NoticeList = memo(() => {
                   </tr>
                </thead>
                <tbody>
-                  {noticeData
+                  {data
                      .sort(function (a, b) {
                         if (a.id > b.id) {
                            return -1;
@@ -47,7 +55,9 @@ const NoticeList = memo(() => {
                      .map(item => (
                         <tr key={item.id}>
                            <td>{item.id}</td>
-                           <td>{item.title}</td>
+                           <td onClick={() => updateView(item.id)}>
+                              <Link to={`/noticeDetail/${item.id}`}> {item.title}</Link>
+                           </td>
                            <td>{item.date}</td>
                            <td>{item.view}</td>
                         </tr>
