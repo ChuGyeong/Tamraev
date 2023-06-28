@@ -15,9 +15,9 @@ const Home = memo(() => {
    return (
       <div>
          {/* <Visual /> */}
-         {/* <Contents data={data} /> */}
+         <Contents data={data} />
          <Footer />
-         {isPopUp && <Popup />}
+         {/* {isPopUp && <Popup />} */}
       </div>
    );
 });
