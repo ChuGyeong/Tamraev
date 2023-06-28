@@ -1,7 +1,30 @@
-import React, { memo } from 'react';
+import React, { memo, useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
+import './styles.css';
 
-const PopUpSlide = memo(() => {
-   return <div>스와이퍼</div>;
+const PopUpSlide = memo(({ slideimgUrl }) => {
+   return (
+      <div className="slideBox">
+         <Swiper
+            cssMode={true}
+            navigation={true}
+            pagination={true}
+            mousewheel={true}
+            keyboard={true}
+            modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+            className="mySwiper">
+            {slideimgUrl.map((item, idx) => (
+               <SwiperSlide key={idx}>
+                  <img src={item} alt="" />
+               </SwiperSlide>
+            ))}
+         </Swiper>
+      </div>
+   );
 });
 
 export default PopUpSlide;

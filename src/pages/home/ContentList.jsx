@@ -3,7 +3,6 @@ import ContentItem from './ContentItem';
 import { ContentListBox } from '../../styled/tamraevStyle';
 
 const ContentList = memo(({ data, onPopUp }) => {
-   console.log(data);
    return (
       <ContentListBox>
          <ul>

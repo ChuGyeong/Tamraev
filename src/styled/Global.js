@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
 
   /* other styles */
   body {
+    background: #fff;
     font-size: 16px;
     line-height: 1.6;
     font-family: 'Noto Sans KR', sans-serif;
