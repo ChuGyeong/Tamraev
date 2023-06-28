@@ -4,6 +4,8 @@ import Contents from './Contents';
 import Popup from './Popup';
 import Visual from './Visual';
 import Nav from '../../components/Nav';
+import Loading from '../../components/Loading';
+import Error from '../../components/Error';
 
 const Home = memo(() => {
    const {
@@ -65,7 +67,7 @@ const Home = memo(() => {
    return (
       <div>
          {!loading && data ? (
-            <div>Loading...</div>
+            <Loading />
          ) : (
             <>
                <Nav isMain={true} />
@@ -81,7 +83,8 @@ const Home = memo(() => {
                />
                {isPopUp && <Popup popUpItem={popUpItem} setIsPopUp={setIsPopUp} onLike={onLike} />}
             </>
-         )}{' '}
+         )}
+         {error && <Error />}
       </div>
    );
 });

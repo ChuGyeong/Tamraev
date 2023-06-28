@@ -7,6 +7,7 @@ import Home from './pages/home/Home';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import NoticeDetail from './pages/noticeList/NoticeDetail';
+import Error from './components/Error';
 
 const App = () => {
    return (
@@ -21,6 +22,7 @@ const App = () => {
                   <Route index element={<NoticeList />} />
                   <Route path=":noticeID" element={<NoticeDetail />} />
                </Route>
+               <Route path="*" element={<Error />} />
             </Routes>
             <Footer />
          </BrowserRouter>
