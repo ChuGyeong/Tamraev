@@ -7,7 +7,7 @@ import Footer from '../../components/Footer';
 
 const Home = memo(() => {
    const { data, loading, error } = useAxios(
-      'https://gist.githubusercontent.com/ChuGyeong/710c08b6a0967c9bb97c83e4e588604f/raw/75d027779930599c264d2172d36ebf158e3b9253/tamraev.json',
+      'https://gist.githubusercontent.com/ChuGyeong/710c08b6a0967c9bb97c83e4e588604f/raw/12780e33b46e459942d09db7faaa58e3e5631758/tamraev.json',
    );
    const [isPopUp, setIsPopUp] = useState(false);
    const [popUpItem, setPopUpItem] = useState({});
