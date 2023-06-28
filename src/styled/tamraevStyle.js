@@ -495,3 +495,125 @@ export const NavContainer = styled.div`
       }
    }
 `;
+
+// NoticeList
+export const NoticeListContainer = styled.div`
+   .noticeBox {
+      width: 1200px;
+      text-align: center;
+      margin: auto;
+      h3 {
+         font-size: 40px;
+         font-weight: 700;
+      }
+      p {
+         color: #666;
+         font-size: 18px;
+         margin-bottom: 50px;
+      }
+      table {
+         font-size: 18px;
+         width: 100%;
+         .wid1 {
+            width: 13%;
+         }
+         .wid2 {
+            width: auto;
+         }
+         .wid3 {
+            width: 13%;
+         }
+         .wid4 {
+            width: 13%;
+         }
+         tr th {
+            height: 46px;
+            line-height: 46px;
+            border-bottom: 1px solid #000;
+            border-top: 1px solid #000;
+            font-weight: 900;
+         }
+         tr td {
+            border-top: 1px solid #d8d5d5;
+            text-align: center;
+            height: 99px;
+            line-height: 99px;
+            &:nth-child(2) {
+               text-align: left;
+               letter-spacing: -2px;
+               font-weight: 900;
+               cursor: pointer;
+            }
+         }
+      }
+   }
+`;
+
+// NoticeDetail
+export const NoticeDetailBox = styled.div`
+   .noticeBox {
+      width: 1200px;
+      text-align: center;
+      margin: auto;
+      h3 {
+         font-size: 40px;
+         font-weight: 700;
+      }
+      p {
+         color: #666;
+         font-size: 18px;
+         margin-bottom: 50px;
+      }
+      .noticeView {
+         border-top: 1px solid #000;
+         .textBox {
+            margin-bottom: 50px;
+            h4 {
+               font-size: 28px;
+               line-height: 1;
+               margin-bottom: 13px;
+               font-weight: 500;
+               margin-top: 30px;
+            }
+            span {
+               font-size: 15px;
+               color: #666;
+               display: block;
+               border-bottom: 1px solid #d8d5d5;
+               padding-bottom: 30px;
+            }
+         }
+      }
+      .contentBox {
+         text-align: left;
+         margin: 50px 0;
+         border-bottom: 1px solid #000;
+         padding-bottom: 50px;
+      }
+      .paging {
+         position: relative;
+         button {
+            border: none;
+            font-size: 18px;
+            height: 55px;
+            cursor: pointer;
+            &.list {
+               padding: 0 70px;
+               color: #fff;
+               background: #002c5f;
+            }
+            &.btn {
+               position: absolute;
+               top: 0;
+               background: transparent;
+               &.prev {
+                  left: 0;
+               }
+               &.next {
+                  right: 0;
+               }
+            }
+         }
+      }
+   }
+`;
