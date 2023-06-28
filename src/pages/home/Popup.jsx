@@ -4,30 +4,42 @@ import { AiFillHeart } from 'react-icons/ai';
 import PopUpVideo from './PopUpVideo';
 import PopUpSlide from './PopUpSlide';
 
-const Popup = memo(({ popUpItem, setIsPopUp }) => {
-   const { id, title, tag, like, imgUrl, videoUrl, slideImgUrl } = popUpItem;
+const Popup = memo(({ popUpItem, setIsPopUp, onLike }) => {
+   const { id, title, tag, categories, like, imgUrl, videoUrl, slideimgUrl } = popUpItem;
    return (
       <PopupContainer>
          <div className="bg" onClick={() => setIsPopUp(false)}></div>
          <div className="card">
-            <div className="mediaArea">{videoUrl !== '' ? <PopUpVideo videoUrl={videoUrl} /> : <PopUpSlide />}</div>
+            <div className="mediaArea">
+               {videoUrl !== '' ? <PopUpVideo videoUrl={videoUrl} /> : <PopUpSlide slideimgUrl={slideimgUrl} />}
+            </div>
             <div className="textArea">
                <button className="close" onClick={() => setIsPopUp(false)}>
                   <i className="xi-close"></i>
                </button>
-               <strong>카테고리</strong>
+               <strong>
+                  {categories === 'PopularContent'
+                     ? '인기 콘텐츠'
+                     : categories === 'IntroductionToElectricVehicles'
+                     ? '전기차 소개'
+                     : categories === 'smartElectricCarTrip'
+                     ? '슬기로운 전기차 여행'
+                     : categories === 'ChargingAndTroubleshooting'
+                     ? '충전 및 문제 대처법'
+                     : 'FAQ'}
+               </strong>
                <p>
-                  {title.split('\\n').map(line => {
+                  {title.split('\\n').map((line, idx) => {
                      return (
-                        <>
+                        <span key={idx}>
                            {line}
                            <br />
-                        </>
+                        </span>
                      );
                   })}
                </p>
                <div className="likeBox">
-                  <button>
+                  <button onClick={() => onLike(id)}>
                      <i>
                         <AiFillHeart />
                      </i>
@@ -36,8 +48,8 @@ const Popup = memo(({ popUpItem, setIsPopUp }) => {
                </div>
                <div className="sns-share">
                   <div className="tagBox">
-                     {tag.map(item => (
-                        <em>#{item}</em>
+                     {tag.map((item, idx) => (
+                        <em key={idx}>#{item}</em>
                      ))}
                   </div>
                   <div className="btnBox">

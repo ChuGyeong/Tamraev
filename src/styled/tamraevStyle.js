@@ -26,6 +26,92 @@ export const VisualContainer = styled.div`
    }
 `;
 
+// CategoryMenu
+export const ContentMenu = styled.div`
+   width: 1200px;
+   margin: auto;
+   text-align: center;
+   h3 {
+      margin: 30px;
+      font-size: 45px;
+      font-weight: 700;
+   }
+   ul {
+      border-top: 1px solid #e4dcd3;
+      border-bottom: 1px solid #e4dcd3;
+      padding-left: 30px;
+      display: flex;
+      box-sizing: border-box;
+      li {
+         height: 60px;
+         line-height: 40px;
+         margin: 0 15px;
+         padding: 10px 0;
+         cursor: pointer;
+         text-align: center;
+         font-weight: 600;
+         color: #888;
+         box-sizing: border-box;
+         transition: 0.2s;
+         &.on {
+            color: #007fa8;
+         }
+         &:hover {
+            border-bottom: 3px solid #007fa8;
+         }
+         &:last-child:hover {
+            border: none;
+         }
+         button {
+            width: 90px;
+            height: 35px;
+            border: none;
+            background: #e4dcd3;
+            border-radius: 20px;
+            cursor: pointer;
+            i {
+               font-size: 20px;
+               vertical-align: top;
+               margin-right: 5px;
+            }
+         }
+      }
+   }
+`;
+
+// ContentSearch
+export const ContentSearchBox = styled.form`
+   height: 0;
+   line-height: 150px;
+   background: #e4dcd3;
+   margin-bottom: 50px;
+   transition: 0.4s;
+   overflow: hidden;
+   input {
+      width: 640px;
+      height: 60px;
+      padding: 0;
+      border: none;
+      outline: none;
+      text-indent: 20px;
+   }
+   button {
+      cursor: pointer;
+      background: #007fa8;
+      border: none;
+      height: 60px;
+      vertical-align: middle;
+      i {
+         color: #fff;
+         font-size: 20px;
+         width: 40px;
+      }
+   }
+   &.on {
+      height: 160px;
+   }
+`;
+
 // ContentList
 export const ContentListBox = styled.div`
    margin: auto;
@@ -72,6 +158,15 @@ export const PopupContainer = styled.div`
       z-index: 150;
       .mediaArea {
          width: 720px;
+         .videoBox {
+            height: 720px;
+            display: flex;
+            align-items: center;
+            background: #000;
+         }
+         .slideBox {
+            height: 720px;
+         }
       }
       .textArea {
          position: relative;
@@ -118,7 +213,7 @@ export const PopupContainer = styled.div`
             }
          }
          .sns-share {
-            width: 400px;
+            width: 350px;
             position: absolute;
             left: 70px;
             bottom: 70px;
@@ -135,7 +230,7 @@ export const PopupContainer = styled.div`
             }
             .iconBox {
                border-top: 1px solid #c3bdb6;
-               width: 400px;
+               width: 350px;
                text-align: right;
                margin-top: 37px;
                padding-top: 20px;

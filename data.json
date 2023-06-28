@@ -1,0 +1,669 @@
+[
+   {
+      "id": 1,
+      "categories": "IntroductionToElectricVehicles",
+      "title": "메뉴얼 영상 #1\\n전기차 충전 이론편",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "전기차충전이론편",
+         "완속충전",
+         "급속충전",
+         "커넥터종류",
+         "DC콤보",
+         "DC차데모",
+         "AC3상",
+         "충전상태",
+         "전기차충전",
+         "전기차충전방식",
+         "충전방식",
+         "충전구위치"
+      ],
+      "like": 49,
+      "imgUrl": "./images/home/1.jpg",
+      "videoUrl": "https://www.youtube.com/embed/N4VYukGaYU4",
+      "slideimgUrl": []
+   },
+   {
+      "id": 2,
+      "categories": "IntroductionToElectricVehicles",
+      "title": "메뉴얼 영상 #2\\n전기차 충전 실습편",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "전기차충전실습편",
+         "충전법",
+         "충전방법",
+         "충전시기",
+         "적정충전량",
+         "충전기이용방법",
+         "회원카드",
+         "신용카드",
+         "언제충전할까",
+         "어떻게충전할까"
+      ],
+      "like": 22,
+      "imgUrl": "./images/home/2.jpg",
+      "videoUrl": "https://www.youtube.com/embed/N2I_AuxSYB",
+      "slideimgUrl": []
+   },
+   {
+      "id": 3,
+      "categories": "IntroductionToElectricVehicles",
+      "title": "차세대 이동수단\\n대세로 자리잡은\\n전기차 장단점",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "전기차장단점",
+         "전기차장점",
+         "전기차단점",
+         "친환경성",
+         "유지관리비절약",
+         "승차감",
+         "요즘대세전기차"
+      ],
+      "like": 9,
+      "imgUrl": "./images/home/3.jpg",
+      "videoUrl": "",
+      "slideimgUrl": [
+         "./images/home/3-1.jpg",
+         "./images/home/3-2.jpg",
+         "./images/home/3-3.jpg",
+         "./images/home/3-4.jpg",
+         "./images/home/3-5.jpg",
+         "./images/home/3-6.jpg",
+         "./images/home/3-7.jpg"
+      ]
+   },
+   {
+      "id": 4,
+      "categories": "smartElectricCarTrip",
+      "title": "제주도 여행 시\\n전기차 렌트를 더 많이\\n이용하는 이유!",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "제주도여행",
+         "전기차렌트",
+         "전기차렌트혜택",
+         "렌터카",
+         "공영주차장혜택",
+         "주차비할인",
+         "전기차충전혜택"
+      ],
+      "like": 167,
+      "imgUrl": "./images/home/4.jpg",
+      "videoUrl": "",
+      "slideimgUrl": [
+         "./images/home/4-1.jpg",
+         "./images/home/4-2.jpg",
+         "./images/home/4-3.jpg",
+         "./images/home/4-4.jpg",
+         "./images/home/4-5.jpg",
+         "./images/home/4-6.jpg"
+      ]
+   },
+   {
+      "id": 5,
+      "categories": "smartElectricCarTrip",
+      "title": "전기차 렌트 시\\n꼭 확인해야 할\\n체크리스트",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "제주도여행",
+         "전기차체크리스트",
+         "회원카드",
+         "충전카드",
+         "변환젠더",
+         "특약보험"
+      ],
+      "like": 44,
+      "imgUrl": "./images/home/5.jpg",
+      "videoUrl": "",
+      "slideimgUrl": [
+         "./images/home/5-1.jpg",
+         "./images/home/5-2.jpg",
+         "./images/home/5-3.jpg",
+         "./images/home/5-4.jpg",
+         "./images/home/5-5.jpg"
+      ]
+   },
+   {
+      "id": 6,
+      "categories": "smartElectricCarTrip",
+      "title": "전기차 렌트할 때\\n회원카드 빌릴까?\\n말까?",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "전기차렌트",
+         "회원카드혜택",
+         "회원카드",
+         "충전카드",
+         "신용카드",
+         "신용카드혜택",
+         "주행거리",
+         "전기차충전비용"
+      ],
+      "like": 67,
+      "imgUrl": "./images/home/6.jpg",
+      "videoUrl": "",
+      "slideimgUrl": [
+         "./images/home/6-1.jpg",
+         "./images/home/6-2.jpg",
+         "./images/home/6-3.jpg",
+         "./images/home/6-4.jpg",
+         "./images/home/6-5.jpg",
+         "./images/home/6-6.jpg",
+         "./images/home/6-7.jpg",
+         "./images/home/6-8.jpg"
+      ]
+   },
+   {
+      "id": 7,
+      "categories": "smartElectricCarTrip",
+      "title": "전기차로 여행하나요? 그럼, 충전 플랜을\\n세워볼까요!",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "전기차렌트",
+         "전기차충전플랜",
+         "충전플랜",
+         "전기차충전소위치",
+         "제주도여행코스"
+      ],
+      "like": 8,
+      "imgUrl": "./images/home/7.jpg",
+      "videoUrl": "",
+      "slideimgUrl": [
+         "./images/home/7-1.jpg",
+         "./images/home/7-2.jpg",
+         "./images/home/7-3.jpg",
+         "./images/home/7-4.jpg",
+         "./images/home/7-5.jpg",
+         "./images/home/7-6.jpg",
+         "./images/home/7-7.jpg",
+         "./images/home/7-8.jpg"
+      ]
+   },
+   {
+      "id": 8,
+      "categories": "smartElectricCarTrip",
+      "title": "전기차 주행거리\\n늘리는 방법!",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "전기차주행거리",
+         "급가속",
+         "급제동",
+         "열선이용",
+         "예약공조",
+         "회생제동"
+      ],
+      "like": 21,
+      "imgUrl": "./images/home/8.jpg",
+      "videoUrl": "",
+      "slideimgUrl": [
+         "./images/home/8-1.jpg",
+         "./images/home/8-2.jpg",
+         "./images/home/8-3.jpg",
+         "./images/home/8-4.jpg",
+         "./images/home/8-5.jpg",
+         "./images/home/8-6.jpg"
+      ]
+   },
+   {
+      "id": 9,
+      "categories": "ChargingAndTroubleshooting",
+      "title": "메뉴얼 영상 #2\\n전기차 충전 실습편",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "전기차충전실습편",
+         "충전법",
+         "충전방법",
+         "충전시기",
+         "적정충전량",
+         "충전기이용방법",
+         "회원카드",
+         "신용카드",
+         "언제충전할까",
+         "어떻게충전할까"
+      ],
+      "like": 12,
+      "imgUrl": "./images/home/9.jpg",
+      "videoUrl": "https://www.youtube.com/embed/N2I_AuxSYB",
+      "slideimgUrl": []
+   },
+   {
+      "id": 10,
+      "categories": "ChargingAndTroubleshooting",
+      "title": "스마트하고 편리한\\n제주도 전기차 충전소 검색방법",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "제주도전기차충전소",
+         "전기차렌트",
+         "충전소검색",
+         "충전소",
+         "전기차충전소",
+         "마이현대",
+         "EVWhere",
+         "EVInfra"
+      ],
+      "like": 13,
+      "imgUrl": "./images/home/10.jpg",
+      "videoUrl": "",
+      "slideimgUrl": [
+         "./images/home/10-1.jpg",
+         "./images/home/10-2.jpg",
+         "./images/home/10-3.jpg",
+         "./images/home/10-4.jpg",
+         "./images/home/10-5.jpg",
+         "./images/home/10-6.jpg",
+         "./images/home/10-7.jpg",
+         "./images/home/10-7.jpg"
+      ]
+   },
+   {
+      "id": 11,
+      "categories": "ChargingAndTroubleshooting",
+      "title": "메뉴얼 영상 #3\\n찾아가는\\n충전 서비스편",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "전기차충전서비스편",
+         "현대자동차",
+         "찾아가는충전서비스",
+         "마이현대",
+         "고객센터",
+         "현대자동차고객센터",
+         "블루멤버스",
+         "전기차방전"
+      ],
+      "like": 5,
+      "imgUrl": "./images/home/11.jpg",
+      "videoUrl": "https://www.youtube.com/embed/92xqMb0mYDg",
+      "slideimgUrl": []
+   },
+   {
+      "id": 12,
+      "categories": "ChargingAndTroubleshooting",
+      "title": "비가 자주 오는\\n제주도에서도 안전한\\n전기차 충전",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "비오는제주전기차",
+         "비오는날충전",
+         "감전예방시스템",
+         "안전한여행"
+      ],
+      "like": 6,
+      "imgUrl": "./images/home/12.jpg",
+      "videoUrl": "",
+      "slideimgUrl": [
+         "./images/home/12-1.jpg",
+         "./images/home/12-2.jpg",
+         "./images/home/12-3.jpg",
+         "./images/home/12-4.jpg",
+         "./images/home/12-5.jpg",
+         "./images/home/12-6.jpg",
+         "./images/home/12-7.jpg",
+         "./images/home/12-7.jpg"
+      ]
+   },
+   {
+      "id": 13,
+      "categories": "ChargingAndTroubleshooting",
+      "title": "차량 사고나면\\n어떡하지?\\n차량사고&고장대응법",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "전기차사고대응",
+         "전기차사고",
+         "고장대응",
+         "사고대응",
+         "고장",
+         "사고",
+         "대응방법",
+         "충전서비스"
+      ],
+      "like": 7,
+      "imgUrl": "./images/home/13.jpg",
+      "videoUrl": "",
+      "slideimgUrl": [
+         "./images/home/13-1.jpg",
+         "./images/home/13-2.jpg",
+         "./images/home/13-3.jpg",
+         "./images/home/13-4.jpg",
+         "./images/home/13-5.jpg",
+         "./images/home/13-6.jpg",
+         "./images/home/13-7.jpg",
+         "./images/home/13-7.jpg"
+      ]
+   },
+   {
+      "id": 14,
+      "categories": "ChargingAndTroubleshooting",
+      "title": "찾아가는 충전 서비스\\n및 고장난 충전기\\n지킴이 서비스",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "충전서비스",
+         "충전기지킴이",
+         "마이현대",
+         "고객센터",
+         "20wh무상충전",
+         "전기차이용서비스",
+         "찾충서비스"
+      ],
+      "like": 35,
+      "imgUrl": "./images/home/14.jpg",
+      "videoUrl": "",
+      "slideimgUrl": []
+   },
+   {
+      "id": 15,
+      "categories": "FAQ",
+      "title": "전기차의 잘못된 오해\\n#01",
+      "tag": ["제주도", "탐라는전기차", "전기차", "아이오닉5", "전자파", "전기차전자파", "전기차잘못된오해"],
+      "like": 19,
+      "imgUrl": "./images/home/15.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/15-1.jpg", "./images/home/15-2.jpg", "./images/home/15-3.jpg"]
+   },
+   {
+      "id": 16,
+      "categories": "FAQ",
+      "title": "전기차의 잘못된 오해\\n#02",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "안전장치",
+         "배터리",
+         "배터리안전설계",
+         "전기차잘못된오해"
+      ],
+      "like": 37,
+      "imgUrl": "./images/home/16.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/16-1.jpg", "./images/home/16-2.jpg", "./images/home/16-3.jpg"]
+   },
+   {
+      "id": 17,
+      "categories": "FAQ",
+      "title": "전기차 실내 정보\\n#01",
+      "tag": ["제주도", "탐라는전기차", "전기차", "아이오닉5", "운전습관", "주행가능거리", "전기차실내정보"],
+      "like": 36,
+      "imgUrl": "./images/home/17.jpg",
+      "videoUrl": "",
+      "slideimgUrl": [
+         "./images/home/17-1.jpg",
+         "./images/home/17-2.jpg",
+         "./images/home/17-3.jpg",
+         "./images/home/17-4.jpg"
+      ]
+   },
+   {
+      "id": 18,
+      "categories": "FAQ",
+      "title": "전기차 실내 정보\\n#02",
+      "tag": ["제주도", "탐라는전기차", "전기차", "아이오닉5", "날씨", "온도", "주행가능거리", "전기차실내정보"],
+      "like": 4,
+      "imgUrl": "./images/home/18.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/18-1.jpg", "./images/home/18-2.jpg"]
+   },
+   {
+      "id": 19,
+      "categories": "FAQ",
+      "title": "전기차 실내 정보\\n#03",
+      "tag": ["제주도", "탐라는전기차", "전기차", "아이오닉5", "공조기능", "열선", "주행가능거리", "전기차실내정보"],
+      "like": 9,
+      "imgUrl": "./images/home/19.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/19-1.jpg", "./images/home/19-2.jpg", "./images/home/19-3.jpg"]
+   },
+   {
+      "id": 20,
+      "categories": "FAQ",
+      "title": "전기차 실내 정보\\n#04",
+      "tag": ["제주도", "탐라는전기차", "전기차", "아이오닉5", "공조기능", "에어컨", "주행가능거리", "전기차실내정보"],
+      "like": 6,
+      "imgUrl": "./images/home/20.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/20-1.jpg", "./images/home/20-2.jpg"]
+   },
+   {
+      "id": 21,
+      "categories": "FAQ",
+      "title": "전기차 실내 정보\\n#05",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "잔여주행거리",
+         "자동저속모드",
+         "배터리잔량",
+         "전기차실내정보"
+      ],
+      "like": 2,
+      "imgUrl": "./images/home/21.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/21-1.jpg", "./images/home/21-2.jpg"]
+   },
+   {
+      "id": 22,
+      "categories": "FAQ",
+      "title": "전기차 실내 정보\\n#06",
+      "tag": ["제주도", "탐라는전기차", "전기차", "아이오닉5", "배터리잔량", "파워다운경고등", "전기차실내정보"],
+      "like": 3,
+      "imgUrl": "./images/home/22.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/22-1.jpg", "./images/home/22-2.jpg"]
+   },
+   {
+      "id": 23,
+      "categories": "FAQ",
+      "title": "전기차 실내 정보\\n#07",
+      "tag": ["제주도", "탐라는전기차", "전기차", "아이오닉5", "회생제동기능", "스마트회생시스템", "전기차실내정보"],
+      "like": 2,
+      "imgUrl": "./images/home/23.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/23-1.jpg", "./images/home/23-2.jpg"]
+   },
+   {
+      "id": 24,
+      "categories": "FAQ",
+      "title": "전기차 실내 정보\\n#08",
+      "tag": ["제주도", "탐라는전기차", "전기차", "아이오닉5", "엔진사운드", "시동안걸림", "차량시동"],
+      "like": 1,
+      "imgUrl": "./images/home/24.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/24-1.jpg", "./images/home/24-2.jpg"]
+   },
+   {
+      "id": 25,
+      "categories": "FAQ",
+      "title": "전기차 실내 정보\\n#09",
+      "tag": ["제주도", "탐라는전기차", "전기차", "아이오닉5", "에코플러스모드", "공조기능", "전기차실내정보"],
+      "like": 3,
+      "imgUrl": "./images/home/25.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/25-1.jpg", "./images/home/25-2.jpg"]
+   },
+   {
+      "id": 26,
+      "categories": "FAQ",
+      "title": "전기차 실내 정보\\n#10",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "전기차충전시",
+         "충전방법",
+         "차량시동",
+         "전기차실내정보"
+      ],
+      "like": 5,
+      "imgUrl": "./images/home/26.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/26-1.jpg", "./images/home/26-2.jpg"]
+   },
+   {
+      "id": 27,
+      "categories": "FAQ",
+      "title": "전기차 실내 정보\\n#11",
+      "tag": ["제주도", "탐라는전기차", "전기차", "아이오닉5", "충전방법", "충전중단", "결제환불", "전기차실내정보"],
+      "like": 2,
+      "imgUrl": "./images/home/27.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/27-1.jpg", "./images/home/27-2.jpg", "./images/home/27-3.jpg"]
+   },
+   {
+      "id": 28,
+      "categories": "FAQ",
+      "title": "전기차 실외 정보\\n#01",
+      "tag": ["제주도", "탐라는전기차", "전기차", "아이오닉5", "비오는날", "충전방법", "감전차단", "전기차실외정보"],
+      "like": 6,
+      "imgUrl": "./images/home/28.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/28-1.jpg", "./images/home/28-2.jpg", "./images/home/28-3.jpg"]
+   },
+   {
+      "id": 29,
+      "categories": "FAQ",
+      "title": "전기차 실외 정보\\n#02",
+      "tag": ["제주도", "탐라는전기차", "전기차", "아이오닉5", "충전방법", "충전완료", "충전선분리", "전기차실외정보"],
+      "like": 4,
+      "imgUrl": "./images/home/29.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/29-1.jpg", "./images/home/29-2.jpg"]
+   },
+   {
+      "id": 30,
+      "categories": "FAQ",
+      "title": "전기차 실외 정보\\n#03",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "충전방법",
+         "충전완료",
+         "충전선분리",
+         "충전커넥터",
+         "전기차실외정보"
+      ],
+      "like": 4,
+      "imgUrl": "./images/home/30.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/30-1.jpg", "./images/home/30-2.jpg"]
+   },
+   {
+      "id": 31,
+      "categories": "FAQ",
+      "title": "전기차 실외 정보\\n#04",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "제주도여행",
+         "렌터카충전",
+         "충전카드분실",
+         "전기차실외정보"
+      ],
+      "like": 2,
+      "imgUrl": "./images/home/31.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/31-1.jpg", "./images/home/31-2.jpg", "./images/home/31-3.jpg"]
+   },
+   {
+      "id": 32,
+      "categories": "FAQ",
+      "title": "전기차 실외 정보\\n#05",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "전기차방전",
+         "긴급출동",
+         "렌트카사고처리",
+         "전기차실외정보"
+      ],
+      "like": 2,
+      "imgUrl": "./images/home/32.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/32-1.jpg", "./images/home/32-2.jpg"]
+   },
+   {
+      "id": 33,
+      "categories": "FAQ",
+      "title": "전기차 실외 정보\\n#06",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "전기차사고대비",
+         "충전중사고",
+         "사고대처",
+         "전기차실외정보"
+      ],
+      "like": 5,
+      "imgUrl": "./images/home/33.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/33-1.jpg", "./images/home/33-2.jpg"]
+   },
+   {
+      "id": 34,
+      "categories": "FAQ",
+      "title": "전기차 실외 정보\\n#07",
+      "tag": [
+         "제주도",
+         "탐라는전기차",
+         "전기차",
+         "아이오닉5",
+         "전기차교통사고",
+         "운행중사고",
+         "신속대피",
+         "전기차실외정보"
+      ],
+      "like": 2,
+      "imgUrl": "./images/home/34.jpg",
+      "videoUrl": "",
+      "slideimgUrl": ["./images/home/34-1.jpg", "./images/home/34-2.jpg"]
+   }
+]

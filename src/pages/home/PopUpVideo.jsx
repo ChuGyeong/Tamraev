@@ -1,17 +1,16 @@
 import React, { memo } from 'react';
 
 const PopUpVideo = memo(({ videoUrl }) => {
-   console.log(videoUrl);
    return (
-      <div>
+      <div className="videoBox">
          <iframe
-            width="560"
+            width="100%"
             height="315"
             src={videoUrl}
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+            allowFullScreen></iframe>
       </div>
    );
 });
