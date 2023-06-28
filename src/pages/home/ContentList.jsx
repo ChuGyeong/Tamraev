@@ -2,12 +2,12 @@ import React, { memo } from 'react';
 import ContentItem from './ContentItem';
 import { ContentListBox } from '../../styled/tamraevStyle';
 
-const ContentList = memo(({ data }) => {
+const ContentList = memo(({ data, onPopUp }) => {
    return (
       <ContentListBox>
          <ul>
             {data.map(item => (
-               <ContentItem key={item.id} item={item} />
+               <ContentItem key={item.id} item={item} onPopUp={onPopUp} />
             ))}
          </ul>
       </ContentListBox>

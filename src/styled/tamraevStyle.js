@@ -45,6 +45,7 @@ export const ContentItemList = styled.li`
    height: 384px;
    img {
       width: 100%;
+      cursor: pointer;
    }
 `;
 
@@ -57,6 +58,7 @@ export const PopupContainer = styled.div`
       height: 100vh;
       top: 0;
       left: 0;
+      z-index: 100;
    }
    .card {
       position: absolute;
@@ -67,6 +69,7 @@ export const PopupContainer = styled.div`
       left: 50%;
       transform: translate(-50%, -50%);
       display: flex;
+      z-index: 150;
       .mediaArea {
          width: 720px;
       }
@@ -85,15 +88,17 @@ export const PopupContainer = styled.div`
             background: transparent;
             border: none;
             font-size: 25px;
+            cursor: pointer;
          }
          strong {
             color: #007fa8;
             font-weight: 700;
          }
          p {
-            font-size: 30px;
+            font-size: 35px;
+            line-height: 1.3;
+            margin: 10px 0;
             font-weight: 700;
-            margin: 5px 0;
          }
          .likeBox {
             button {
@@ -104,17 +109,25 @@ export const PopupContainer = styled.div`
                border: none;
                background: #d4c1ac;
                padding: 0;
+               cursor: pointer;
+               margin-right: 20px;
                i {
                   color: #fff;
                   font-size: 20px;
                }
-               margin-right: 20px;
             }
          }
          .sns-share {
+            width: 400px;
             position: absolute;
             left: 70px;
             bottom: 70px;
+            .tagBox {
+               line-height: 2;
+               em {
+                  margin-right: 10px;
+               }
+            }
             span {
                position: absolute;
                left: 0;

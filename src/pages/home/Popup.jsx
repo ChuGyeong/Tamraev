@@ -1,29 +1,45 @@
 import React, { memo } from 'react';
 import { PopupContainer } from '../../styled/tamraevStyle';
 import { AiFillHeart } from 'react-icons/ai';
+import PopUpVideo from './PopUpVideo';
+import PopUpSlide from './PopUpSlide';
 
-const Popup = memo(() => {
+const Popup = memo(({ popUpItem, setIsPopUp }) => {
+   const { id, title, tag, like, imgUrl, videoUrl, slideImgUrl } = popUpItem;
    return (
       <PopupContainer>
-         <div className="bg"></div>
+         <div className="bg" onClick={() => setIsPopUp(false)}></div>
          <div className="card">
-            <div className="mediaArea"></div>
+            <div className="mediaArea">{videoUrl !== '' ? <PopUpVideo videoUrl={videoUrl} /> : <PopUpSlide />}</div>
             <div className="textArea">
-               <button className="close">
+               <button className="close" onClick={() => setIsPopUp(false)}>
                   <i className="xi-close"></i>
                </button>
                <strong>카테고리</strong>
-               <p>타이틀</p>
+               <p>
+                  {title.split('\\n').map(line => {
+                     return (
+                        <>
+                           {line}
+                           <br />
+                        </>
+                     );
+                  })}
+               </p>
                <div className="likeBox">
                   <button>
                      <i>
                         <AiFillHeart />
                      </i>
                   </button>
-                  <span>숫자</span>
+                  <span>{like}</span>
                </div>
                <div className="sns-share">
-                  <div className="tagBox">태그영역</div>
+                  <div className="tagBox">
+                     {tag.map(item => (
+                        <em>#{item}</em>
+                     ))}
+                  </div>
                   <div className="btnBox">
                      <div className="iconBox">
                         <span>
