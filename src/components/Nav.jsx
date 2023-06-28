@@ -24,14 +24,14 @@ const Nav = memo(({ isMain } = false) => {
          <nav className="gnb">
             <h1>
                <Link to={'/'}>
-                  <img src={isMain ? 'images/common/logo.png' : 'images/common/logo_b.png'} alt="" />
+                  <img src={isMain ? '../../images/common/logo.png' : '../../images/common/logo_b.png'} alt="" />
                </Link>
             </h1>
          </nav>
          <nav className={`scrollNav ${isNavActive ? 'on' : ''}`}>
             <ul className="img-box">
                <li>
-                  <img src="./images/common/main_slider_1.jpg" alt="main_slider_1" />
+                  <img src="../../images/common/main_slider_1.jpg" alt="main_slider_1" />
                </li>
             </ul>
             <div className="list-box">

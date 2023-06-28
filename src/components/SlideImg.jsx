@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
 import './styles.css';
 
-const PopUpSlide = memo(({ slideimgUrl }) => {
+const SlideImg = memo(({ slideimgUrl }) => {
    return (
       <div className="slideBox">
          <Swiper
@@ -27,4 +27,4 @@ const PopUpSlide = memo(({ slideimgUrl }) => {
    );
 });
 
-export default PopUpSlide;
+export default SlideImg;

@@ -43,7 +43,6 @@ const Home = memo(() => {
                <Nav isMain={true} />
                <Visual />
                <Contents data={data} onPopUp={onPopUp} />
-               <Footer />
                {isPopUp && <Popup popUpItem={popUpItem} setIsPopUp={setIsPopUp} onLike={onLike} />}
             </>
          )}{' '}

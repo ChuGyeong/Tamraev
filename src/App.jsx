@@ -6,6 +6,7 @@ import NoticeList from './pages/noticeList/NoticeList';
 import Home from './pages/home/Home';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
+import NoticeDetail from './pages/noticeList/NoticeDetail';
 
 const App = () => {
    return (
@@ -16,6 +17,10 @@ const App = () => {
                <Route path="/" element={<Home />} />
                <Route path="info" element={<Info />} />
                <Route path="noticeList" element={<NoticeList />} />
+               <Route path="noticeDetail">
+                  <Route index element={<NoticeList />} />
+                  <Route path=":noticeID" element={<NoticeDetail />} />
+               </Route>
             </Routes>
             <Footer />
          </BrowserRouter>

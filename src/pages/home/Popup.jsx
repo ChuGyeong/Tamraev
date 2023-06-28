@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { PopupContainer } from '../../styled/tamraevStyle';
 import { AiFillHeart } from 'react-icons/ai';
 import PopUpVideo from './PopUpVideo';
-import PopUpSlide from './PopUpSlide';
+import SlideImg from '../../components/SlideImg';
 
 const Popup = memo(({ popUpItem, setIsPopUp, onLike }) => {
    const { id, title, tag, categories, like, imgUrl, videoUrl, slideimgUrl } = popUpItem;
@@ -11,7 +11,7 @@ const Popup = memo(({ popUpItem, setIsPopUp, onLike }) => {
          <div className="bg" onClick={() => setIsPopUp(false)}></div>
          <div className="card">
             <div className="mediaArea">
-               {videoUrl !== '' ? <PopUpVideo videoUrl={videoUrl} /> : <PopUpSlide slideimgUrl={slideimgUrl} />}
+               {videoUrl !== '' ? <PopUpVideo videoUrl={videoUrl} /> : <SlideImg slideimgUrl={slideimgUrl} />}
             </div>
             <div className="textArea">
                <button className="close" onClick={() => setIsPopUp(false)}>
