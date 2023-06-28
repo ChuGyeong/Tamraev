@@ -53,6 +53,9 @@ export const ContentMenu = styled.div`
          color: #888;
          box-sizing: border-box;
          transition: 0.2s;
+         a {
+            color: #888;
+         }
          &.on {
             color: #007fa8;
          }
@@ -119,8 +122,26 @@ export const ContentListBox = styled.div`
    ul {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
       gap: 24px;
+   }
+   .view-more-btn {
+      width: 100%;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      button {
+         background: transparent;
+         border: none;
+         cursor: pointer;
+         i {
+            display: block;
+            font-size: 40px;
+         }
+         span {
+            font-size: 16px;
+         }
+      }
    }
 `;
 
@@ -250,6 +271,7 @@ export const FooterContainer = styled.div`
    padding: 60px 0;
    background: #303030;
    text-align: center;
+   margin-top: 100px;
    img {
    }
    ul {
