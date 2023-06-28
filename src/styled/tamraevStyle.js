@@ -617,3 +617,28 @@ export const NoticeDetailBox = styled.div`
       }
    }
 `;
+//infoContainer
+export const InfoContainer = styled.div`
+   margin-bottom: -100px;
+   .inner {
+      height: 1607px;
+      position: relative;
+      .bg {
+         width: 100%;
+         height: 1056px;
+         background: #f6f3f2;
+         display: block;
+         position: absolute;
+         bottom: 0;
+         z-index: 1;
+      }
+      img {
+         display: block;
+         position: absolute;
+         left: 50%;
+         top: 0;
+         transform: translateX(-50%);
+         z-index: 1;
+      }
+   }
+`;
