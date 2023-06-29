@@ -13,7 +13,7 @@ const hyundaievDetail = memo(() => {
       loading,
       error,
    } = useAxios(
-      'https://gist.githubusercontent.com/ChuGyeong/f85da4ae61e13fb8046ccc0d30ac926c/raw/d2838db41ae39fca68746e5588af70e6ba874bf3/hyundaiev.json',
+      'https://gist.githubusercontent.com/ChuGyeong/f85da4ae61e13fb8046ccc0d30ac926c/raw/55930ae06ea0394319e38175a75454eea25ad650/hyundaiev.json',
    );
    const { hyundaievID } = useParams();
 

@@ -10,7 +10,7 @@ const HyundaievList = memo(() => {
       loading,
       error,
    } = useAxios(
-      'https://gist.githubusercontent.com/ChuGyeong/f85da4ae61e13fb8046ccc0d30ac926c/raw/cb13fb05af04c422936ccf5875a9320442e70e01/hyundaiev.json',
+      'https://gist.githubusercontent.com/ChuGyeong/f85da4ae61e13fb8046ccc0d30ac926c/raw/55930ae06ea0394319e38175a75454eea25ad650/hyundaiev.json',
    );
 
    return (

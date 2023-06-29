@@ -10,7 +10,7 @@ const NoticeList = memo(() => {
       loading,
       error,
    } = useAxios(
-      'https://gist.githubusercontent.com/ChuGyeong/df4f59353713d0b3cdcfeb7ccb1e7478/raw/218ab25456f60018edd12127b8999c56110e666e/noticeList.json',
+      'https://gist.githubusercontent.com/ChuGyeong/df4f59353713d0b3cdcfeb7ccb1e7478/raw/7bb8ef474fc5cf9da432dbc1dde11df2a6aadc12/noticeList.json',
    );
    const [data, setData] = useState(noticeData.sort((a, b) => b.id - a.id) || []);
    const [currentPage, setCurrentPage] = useState(1);

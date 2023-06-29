@@ -23,7 +23,7 @@ const Nav = memo(({ isMain } = false) => {
          <nav className="gnb">
             <h1>
                <Link to={'/'}>
-                  <img src={isMain ? '../../images/common/logo.png' : '../../images/common/logo_b.png'} alt="" />
+                  <img src={isMain ? './images/common/logo.png' : './images/common/logo_b.png'} alt="" />
                </Link>
             </h1>
          </nav>
@@ -38,22 +38,22 @@ const Nav = memo(({ isMain } = false) => {
                   speed={10}
                   loop={true}>
                   <SwiperSlide className="swiper-no-swiping">
-                     <img src="../../images/common/gnb_slider_1.jpg" alt="gnb_slider_1" />
+                     <img src="./images/common/gnb_slider_1.jpg" alt="gnb_slider_1" />
                   </SwiperSlide>
                   <SwiperSlide className="swiper-no-swiping">
-                     <img src="../../images/common/gnb_slider_2.jpg" alt="gnb_slider_2" />
+                     <img src="./images/common/gnb_slider_2.jpg" alt="gnb_slider_2" />
                   </SwiperSlide>
                   <SwiperSlide className="swiper-no-swiping">
-                     <img src="../../images/common/gnb_slider_3.jpg" alt="gnb_slider_3" />
+                     <img src="./images/common/gnb_slider_3.jpg" alt="gnb_slider_3" />
                   </SwiperSlide>
                   <SwiperSlide className="swiper-no-swiping">
-                     <img src="../../images/common/gnb_slider_4.jpg" alt="gnb_slider_4" />
+                     <img src="./images/common/gnb_slider_4.jpg" alt="gnb_slider_4" />
                   </SwiperSlide>
                   <SwiperSlide className="swiper-no-swiping">
-                     <img src="../../images/common/gnb_slider_5.jpg" alt="gnb_slider_5" />
+                     <img src="./images/common/gnb_slider_5.jpg" alt="gnb_slider_5" />
                   </SwiperSlide>
                   <SwiperSlide className="swiper-no-swiping">
-                     <img src="../../images/common/gnb_slider_6.jpg" alt="gnb_slider_6" />
+                     <img src="./images/common/gnb_slider_6.jpg" alt="gnb_slider_6" />
                   </SwiperSlide>
                </Swiper>
             </div>
