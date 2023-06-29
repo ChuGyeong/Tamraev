@@ -43,6 +43,9 @@ const Nav = memo(({ isMain } = false) => {
                      <Link to={'/info'}>탐라는 전기차</Link>
                   </li>
                   <li>
+                     <Link to={'/hyundaievList'}>전기차 소개</Link>
+                  </li>
+                  <li>
                      <Link to={'/noticeList'}>JEJU 전기차 관련 소식</Link>
                   </li>
                </ul>

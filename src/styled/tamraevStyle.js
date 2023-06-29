@@ -597,7 +597,6 @@ export const NoticeDetailBox = styled.div`
             font-size: 18px;
             height: 55px;
             cursor: pointer;
-
             &.list {
                padding: 0 70px;
                color: #fff;
@@ -648,6 +647,165 @@ export const InfoContainer = styled.div`
          top: 0;
          transform: translateX(-50%);
          z-index: 1;
+      }
+   }
+`;
+// HyundaievList
+export const HyundaievContainer = styled.div`
+   .hyundaievBox {
+      width: 1000px;
+      text-align: center;
+      margin: auto;
+      h3 {
+         font-size: 40px;
+         font-weight: 700;
+      }
+      h3 + p {
+         color: #666;
+         font-size: 18px;
+         margin-bottom: 50px;
+      }
+      ul {
+         text-align: left;
+      }
+   }
+`;
+// HyundaievList
+export const HyundaievBox = styled.li`
+   display: flex;
+   border-bottom: 1px solid #efefef;
+   padding: 30px;
+   box-sizing: border-box;
+   position: relative;
+   &:last-child {
+      border-bottom: none;
+   }
+   .textBox {
+      h4 {
+         font-size: 22px;
+         font-weight: 600;
+      }
+      span {
+         font-size: 13px;
+         display: block;
+         margin-bottom: 20px;
+         color: #999;
+      }
+      p {
+         font-size: 14px;
+      }
+   }
+   .moreBox {
+      position: absolute;
+      right: 50px;
+      top: 50%;
+      button {
+         border: none;
+         background: transparent;
+         color: #999;
+         cursor: pointer;
+         i {
+            font-size: 40px;
+            transition: 0.4s;
+            margin-bottom: 10px;
+         }
+         &:hover i {
+            color: #002c5f;
+         }
+      }
+   }
+`;
+
+export const HyundaievDetailContent = styled.div`
+   .hyundaievDetailBox {
+      width: 1000px;
+      margin: 50px auto;
+      h3 {
+         font-size: 40px;
+         font-weight: 900;
+         margin-bottom: 50px;
+         text-align: center;
+      }
+      img {
+         display: block;
+         margin: auto;
+         width: 300px;
+      }
+      p {
+         margin: 30px 0 10px 20px;
+         font-size: 20px;
+         font-weight: 600;
+         position: relative;
+         &::after {
+            display: block;
+            content: '';
+            width: 2px;
+            height: 15px;
+            background: #002c5f;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -15px;
+         }
+      }
+      table {
+         width: 100%;
+         text-indent: 10px;
+         margin-bottom: 50px;
+         .wid1 {
+            width: 200px;
+         }
+         tr {
+            &:nth-child(odd) {
+               background: #efefef;
+            }
+            th {
+               font-weight: 600;
+               text-align: left;
+            }
+            td {
+               padding: 10px;
+               box-sizing: border-box;
+               .star-container {
+                  margin-left: -5px;
+               }
+            }
+         }
+      }
+      .paging {
+         position: relative;
+         button {
+            border: none;
+            font-size: 18px;
+            height: 55px;
+            cursor: pointer;
+            &.list {
+               padding: 0 70px;
+               color: #fff;
+               background: #002c5f;
+               display: block;
+               margin: auto;
+               a {
+                  width: 100%;
+                  height: 100%;
+                  color: #fff;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+               }
+            }
+            &.btn {
+               position: absolute;
+               top: 0;
+               background: transparent;
+               &.prev {
+                  left: 0;
+               }
+               &.next {
+                  right: 0;
+               }
+            }
+         }
       }
    }
 `;
