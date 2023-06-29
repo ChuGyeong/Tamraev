@@ -656,7 +656,6 @@ export const NoticeDetailBox = styled.div`
                background: #002c5f;
                a {
                   padding: 0 70px;
-                  width: 100%;
                   height: 100%;
                   color: #fff;
                   display: flex;
@@ -840,6 +839,7 @@ export const HyundaievDetailContent = styled.div`
                background: #002c5f;
                display: block;
                margin: auto;
+               text-align: center;
                a {
                   padding: 0 70px;
                   height: 100%;
@@ -913,7 +913,7 @@ export const DetailImgContainer = styled.div`
             color: #fff;
             background: #002c5f;
             display: block;
-
+            text-align: center;
             margin: 50px auto;
             a {
                padding: 0 70px;
