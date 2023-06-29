@@ -1,10 +1,10 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import { PopupContainer } from '../../styled/tamraevStyle';
-import { AiFillHeart } from 'react-icons/ai';
 import PopUpVideo from './PopUpVideo';
 import SlideImg from '../../components/SlideImg';
+import SpriteAnimation from '../../components/SpriteAnimation';
 
-const Popup = memo(({ popUpItem, setIsPopUp, onLike }) => {
+const Popup = memo(({ popUpItem, setIsPopUp, onLike, data }) => {
    const { id, title, tag, categories, like, imgUrl, videoUrl, slideimgUrl } = popUpItem;
    return (
       <PopupContainer>
@@ -40,9 +40,12 @@ const Popup = memo(({ popUpItem, setIsPopUp, onLike }) => {
                </p>
                <div className="likeBox">
                   <button onClick={() => onLike(id)}>
-                     <i>
-                        <AiFillHeart />
-                     </i>
+                     <SpriteAnimation
+                        url={'images/home/icon_heart_68x76.png'}
+                        imgW={2244}
+                        spriteW={68}
+                        animationSpeed={30}
+                     />
                   </button>
                   <span>{like}</span>
                </div>

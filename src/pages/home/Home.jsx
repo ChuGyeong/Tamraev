@@ -39,10 +39,15 @@ const Home = memo(() => {
       setPopUpItem(item);
    };
 
+   //  좋아요
    const onLike = id => {
       setData(data.map(item => (item.id === id ? { ...item, like: item.like + 1 } : item)));
    };
-
+   useEffect(() => {
+      if (popUpItem.id) {
+         setPopUpItem(...(data.filter(item => item.id === popUpItem.id) || []));
+      }
+   }, [data]);
    //  검색어로 검색
    const onSearch = text => {
       setData(dataList.filter(item => item.title.includes(text)));
@@ -81,7 +86,7 @@ const Home = memo(() => {
                   itemNumInPage={itemNumInPage}
                   setItemNumInPage={setItemNumInPage}
                />
-               {isPopUp && <Popup popUpItem={popUpItem} setIsPopUp={setIsPopUp} onLike={onLike} />}
+               {isPopUp && <Popup popUpItem={popUpItem} setIsPopUp={setIsPopUp} onLike={onLike} data={data} />}
             </>
          )}
          {error && <Error />}
