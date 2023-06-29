@@ -323,12 +323,11 @@ export const FooterContainer = styled.div`
 //nav
 export const NavContainer = styled.div`
    box-sizing: border-box;
-   width: 100vw;
+   width: 100%;
    position: relative;
    top: 0;
    left: 0;
    z-index: 5;
-   /* background: transparent; */
    .bg {
       width: 100vw;
       height: 100vh;
