@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Footer = memo(() => {
    return (
       <FooterContainer>
-         <img src="../../images/common/logo.png" alt="" />
+         <img src="./images/common/logo.png" alt="" />
          <ul>
             <li>
                <Link to={'/'}>탐라는 전기차</Link>
