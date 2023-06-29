@@ -14,9 +14,9 @@ const Visual = memo(() => {
             slidesPerView="1"
             direction={'vertical'}
             pagination={{ clickable: true }}
-            autoplay={{ delay: 2500, disableOnInteraction: false }}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
             modules={[Autoplay, Pagination]}
-            speed={0}
+            speed={10}
             loop={true}
             onSlideChange={() => {}}>
             <SwiperSlide style={{ position: 'relative' }}>

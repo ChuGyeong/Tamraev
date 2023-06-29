@@ -87,8 +87,9 @@ export const ContentMenu = styled.div`
    ul {
       border-top: 1px solid #e4dcd3;
       border-bottom: 1px solid #e4dcd3;
-      padding-left: 30px;
       display: flex;
+      padding: 0 30px;
+      justify-content: space-between;
       box-sizing: border-box;
       li {
          height: 60px;
@@ -216,7 +217,7 @@ export const PopupContainer = styled.div`
       z-index: 100;
    }
    .card {
-      position: absolute;
+      position: fixed;
       width: 1200px;
       height: 720px;
       background: #fff;
