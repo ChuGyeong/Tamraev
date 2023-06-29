@@ -19,7 +19,7 @@ const Visual = memo(() => {
             speed={10}
             loop={true}
             onSlideChange={() => {}}>
-            <SwiperSlide style={{ position: 'relative' }}>
+            <SwiperSlide>
                <div className="text-box">
                   <strong>탐라는 전기차</strong>
                   <p>
