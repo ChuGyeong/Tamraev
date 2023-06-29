@@ -26,6 +26,36 @@
 
 <br>
 
+```
+Tamraev
+├──public
+│    └── images
+└── src
+    ├── assets
+    ├── components
+    │    └──┬ CenteredImg.jsx
+    │       ├── Error.jsx
+    │       ├── Footer.jsx
+    │       ├── Loading.jsx
+    │       ├── Nav.jsx
+    │       ├── SlideImg.jsx
+    │       ├── SpriteAnimation.jsx
+    │       └── SpriteAnimation.jsx
+    │
+    ├── hooks
+    │      └──┬── useAxios
+    │         └── useInput
+    │
+    ├── pages
+    │      └──┬── home
+    │         └── hyundaiev
+    │         └── info
+    │         └── noticeList
+    │
+    ├── styled
+    └── App.jsx
+```
+
 <br>
 
 ## 4. 프로젝트 기간
@@ -51,13 +81,13 @@
 <br>
 ​
 <details>
-<summary>메인</summary>
+<summary>페이지</summary>
 ​
 <!-- 공백 지우지 마세요 -->
 ​
 <br>
 ​
-## index
+## 부제목
 ​
 <br>
 ​
