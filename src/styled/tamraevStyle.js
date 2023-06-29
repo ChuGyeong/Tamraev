@@ -102,6 +102,7 @@ export const ContentMenu = styled.div`
          color: #888;
          box-sizing: border-box;
          transition: 0.2s;
+         position: relative;
          a {
             display: block;
             color: #888;
@@ -111,24 +112,47 @@ export const ContentMenu = styled.div`
          &.on {
             color: #007fa8;
          }
-         &:hover {
-            border-bottom: 3px solid #007fa8;
+         &::before {
+            content: '';
+            position: absolute;
+            bottom: 0%;
+            left: 0px;
+            width: 100%;
+            height: 2px;
+            background: #6098ff;
+            display: block;
+            -webkit-transform-origin: right top;
+            -ms-transform-origin: right top;
+            transform-origin: right top;
+            -webkit-transform: scale(0, 1);
+            -ms-transform: scale(0, 1);
+            transform: scale(0, 1);
+            -webkit-transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+            transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
          }
-         &:last-child:hover {
-            border: none;
+         &:hover::before {
+            -webkit-transform-origin: left top;
+            -ms-transform-origin: left top;
+            transform-origin: left top;
+            -webkit-transform: scale(1, 1);
+            -ms-transform: scale(1, 1);
+            transform: scale(1, 1);
          }
-         button {
-            width: 90px;
-            height: 35px;
-            border: none;
-            background: #e4dcd3;
-            border-radius: 20px;
-            cursor: pointer;
-            i {
-               font-size: 20px;
-               vertical-align: top;
-               margin-right: 5px;
-            }
+         &:last-child:hover::before {
+            display: none;
+         }
+      }
+      button {
+         width: 90px;
+         height: 35px;
+         border: none;
+         background: #e4dcd3;
+         border-radius: 20px;
+         cursor: pointer;
+         i {
+            font-size: 20px;
+            vertical-align: top;
+            margin-right: 5px;
          }
       }
    }
