@@ -10,13 +10,13 @@ const SlideImg = memo(({ slideimgUrl }) => {
    return (
       <div className="slideBox">
          <Swiper
+            className="outBtnSwiper"
             cssMode={true}
             navigation={true}
             pagination={true}
             mousewheel={true}
             keyboard={true}
-            modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-            className="mySwiper">
+            modules={[Navigation, Pagination, Mousewheel, Keyboard]}>
             {slideimgUrl.map((item, idx) => (
                <SwiperSlide key={idx}>
                   <img src={item} alt="" />
