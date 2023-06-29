@@ -12,7 +12,7 @@ const NoticeDetail = memo(() => {
       loading,
       error,
    } = useAxios(
-      'https://gist.githubusercontent.com/ChuGyeong/df4f59353713d0b3cdcfeb7ccb1e7478/raw/564a199cb321dd07add3f3054c607e5cf810d70e/noticeList.json',
+      'https://gist.githubusercontent.com/ChuGyeong/df4f59353713d0b3cdcfeb7ccb1e7478/raw/218ab25456f60018edd12127b8999c56110e666e/noticeList.json',
    );
 
    const { noticeID } = useParams();

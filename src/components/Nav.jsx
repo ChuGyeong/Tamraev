@@ -2,9 +2,8 @@ import React, { memo, useState } from 'react';
 import { NavContainer } from '../styled/tamraevStyle';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper';
+import { Autoplay } from 'swiper';
 import 'swiper/css';
-import 'swiper/css/pagination';
 
 const Nav = memo(({ isMain } = false) => {
    const [isNavActive, setIsNavActive] = useState(false);
@@ -29,11 +28,35 @@ const Nav = memo(({ isMain } = false) => {
             </h1>
          </nav>
          <nav className={`scrollNav ${isNavActive ? 'on' : ''}`}>
-            <ul className="img-box">
-               <li>
-                  <img src="../../images/common/main_slider_1.jpg" alt="main_slider_1" />
-               </li>
-            </ul>
+            <div className="swiper-box">
+               <Swiper
+                  className="nav-swiper"
+                  slidesPerView="1"
+                  autoplay={{ delay: 4000, disableOnInteraction: false }}
+                  modules={[Autoplay]}
+                  noSwipingClass="swiper-no-swiping"
+                  speed={10}
+                  loop={true}>
+                  <SwiperSlide className="swiper-no-swiping">
+                     <img src="../../images/common/gnb_slider_1.jpg" alt="gnb_slider_1" />
+                  </SwiperSlide>
+                  <SwiperSlide className="swiper-no-swiping">
+                     <img src="../../images/common/gnb_slider_2.jpg" alt="gnb_slider_2" />
+                  </SwiperSlide>
+                  <SwiperSlide className="swiper-no-swiping">
+                     <img src="../../images/common/gnb_slider_3.jpg" alt="gnb_slider_3" />
+                  </SwiperSlide>
+                  <SwiperSlide className="swiper-no-swiping">
+                     <img src="../../images/common/gnb_slider_4.jpg" alt="gnb_slider_4" />
+                  </SwiperSlide>
+                  <SwiperSlide className="swiper-no-swiping">
+                     <img src="../../images/common/gnb_slider_5.jpg" alt="gnb_slider_5" />
+                  </SwiperSlide>
+                  <SwiperSlide className="swiper-no-swiping">
+                     <img src="../../images/common/gnb_slider_6.jpg" alt="gnb_slider_6" />
+                  </SwiperSlide>
+               </Swiper>
+            </div>
             <div className="list-box">
                <ul>
                   <li>

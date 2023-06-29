@@ -103,7 +103,10 @@ export const ContentMenu = styled.div`
          box-sizing: border-box;
          transition: 0.2s;
          a {
+            display: block;
             color: #888;
+            width: 100%;
+            height: 100%;
          }
          &.on {
             color: #007fa8;
@@ -486,18 +489,31 @@ export const NavContainer = styled.div`
       position: absolute;
       left: 0;
       top: -700px;
-      .img-box {
+      .swiper-box {
          width: 50%;
          height: 100%;
          position: relative;
-         li {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            img {
-               width: 100%;
-               height: 100%;
-               object-fit: cover;
+         .nav-swiper {
+            .swiper-slide {
+               overflow: hidden;
+               position: relative;
+               &.swiper-slide-active img {
+                  transform: scale(1);
+                  opacity: 1;
+               }
+               &.swiper-slide-next img,
+               &.swiper-slide-prev img {
+                  transform: scale(1.2);
+                  opacity: 0;
+               }
+
+               img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  object-position: 60% 50%;
+                  transition: transform 2.5s ease-in-out, opacity 0.5s ease-in-out;
+               }
             }
          }
       }
@@ -597,6 +613,22 @@ export const NoticeListContainer = styled.div`
                letter-spacing: -2px;
                font-weight: 900;
                cursor: pointer;
+            }
+         }
+      }
+      .pagination {
+         button {
+            margin-right: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+            background: none;
+            font-size: 20px;
+            &:last-child {
+               margin-right: 0;
+            }
+            &.active {
+               color: #007fa8;
             }
          }
       }
