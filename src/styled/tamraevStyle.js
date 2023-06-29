@@ -108,24 +108,18 @@ export const ContentMenu = styled.div`
          &.on {
             color: #007fa8;
          }
-         &:hover {
-            border-bottom: 3px solid #007fa8;
-         }
-         &:last-child:hover {
-            border: none;
-         }
-         button {
-            width: 90px;
-            height: 35px;
-            border: none;
-            background: #e4dcd3;
-            border-radius: 20px;
-            cursor: pointer;
-            i {
-               font-size: 20px;
-               vertical-align: top;
-               margin-right: 5px;
-            }
+      }
+      button {
+         width: 90px;
+         height: 35px;
+         border: none;
+         background: #e4dcd3;
+         border-radius: 20px;
+         cursor: pointer;
+         i {
+            font-size: 20px;
+            vertical-align: top;
+            margin-right: 5px;
          }
       }
    }
