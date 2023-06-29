@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper';
+import { Autoplay, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { VisualContainer } from '../../styled/tamraevStyle';
@@ -11,10 +11,14 @@ const Visual = memo(() => {
       <VisualContainer>
          <Swiper
             className="visual-swiper"
+            slidesPerView="1"
+            direction={'vertical'}
             pagination={{ clickable: true }}
-            autoplay={{ delay: 2000, disableOnInteraction: false }}
-            modules={[Pagination]}
-            loop={true}>
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
+            modules={[Autoplay, Pagination]}
+            speed={0}
+            loop={true}
+            onSlideChange={() => {}}>
             <SwiperSlide style={{ position: 'relative' }}>
                <div className="text-box">
                   <strong>탐라는 전기차</strong>
