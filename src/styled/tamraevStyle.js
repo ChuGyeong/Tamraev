@@ -265,20 +265,25 @@ export const PopupContainer = styled.div`
             font-weight: 700;
          }
          .likeBox {
+            display: flex;
+            align-items: center;
             button {
-               border-radius: 50%;
-               width: 40px;
-               height: 40px;
-               line-height: 45px;
+               width: 68px;
+               height: 76px;
                border: none;
-               background: #d4c1ac;
                padding: 0;
                cursor: pointer;
-               margin-right: 20px;
-               i {
-                  color: #fff;
-                  font-size: 20px;
-               }
+
+               background-color: transparent;
+               background-image: url('images/home/icon_heart_68x76.png');
+               background-repeat: no-repeat;
+               background-position-y: 0;
+               background-position-x: -204px;
+            }
+            span {
+               color: #626262;
+               font-size: 17px;
+               padding-top: 15px;
             }
          }
          .sns-share {
@@ -290,6 +295,7 @@ export const PopupContainer = styled.div`
                line-height: 2;
                em {
                   margin-right: 10px;
+                  color: #626262;
                }
             }
             span {
@@ -449,7 +455,7 @@ export const NavContainer = styled.div`
          .line {
             width: 30px;
             height: 3px;
-            background-color: ${props => props.line_color};
+            background-color: ${props => props.line_color || '#000'};
             display: block;
             margin-bottom: 6px;
             -webkit-transition: all 0.3s ease-in-out;
