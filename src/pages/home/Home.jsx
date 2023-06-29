@@ -22,7 +22,6 @@ const Home = memo(() => {
       { id: 3, eng: 'smartElectricCarTrip', kor: '슬기로운 전기차 여행', isChk: false },
       { id: 4, eng: 'ChargingAndTroubleshooting', kor: '충전 및 문제 대처법', isChk: false },
       { id: 5, eng: 'FAQ', kor: 'FAQ', isChk: false },
-      { id: 6, eng: 'FindElectricVehicleChargingStations', kor: '제주 전기차 충전소 찾기', isChk: false },
    ]);
    const [itemNumInPage, setItemNumInPage] = useState(6);
    useEffect(() => {

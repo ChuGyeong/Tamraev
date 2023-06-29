@@ -16,7 +16,10 @@ const CategoryMenu = memo(({ menus, changeCategory, onSearch }) => {
                </li>
             ))}
             <li>
-               <Link to={'/noticeList'}> 제주 전기차 뉴스</Link>
+               <Link to={'/hyundaievList'}>전기차 목록</Link>
+            </li>
+            <li>
+               <Link to={'/noticeList'}>제주 전기차 뉴스</Link>
             </li>
             <li>
                <button onClick={() => setIsSearch(!isSearch)}>
