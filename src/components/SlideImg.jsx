@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
-import './slideStyles.css';
+import './styles.css';
 
 const SlideImg = memo(({ slideimgUrl }) => {
    return (

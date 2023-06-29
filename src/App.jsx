@@ -8,8 +8,9 @@ import Home from './pages/home/Home';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Error from './components/Error';
-import HyundaievList from './pages/hyundaiev/hyundaievList';
+import HyundaievList from './pages/hyundaiev/HyundaievList';
 import HyundaievDetail from './pages/hyundaiev/hyundaievDetail';
+import HyundaievImg from './pages/hyundaiev/HyundaievImg';
 
 const App = () => {
    return (
@@ -28,6 +29,10 @@ const App = () => {
                <Route path="hyundaievDetail">
                   <Route index element={<Error />} />
                   <Route path=":hyundaievID" element={<HyundaievDetail />} />
+               </Route>
+               <Route path="hyundaievImg">
+                  <Route index element={<Error />} />
+                  <Route path=":hyundaievImgID" element={<HyundaievImg />} />
                </Route>
                <Route path="*" element={<Error />} />
             </Routes>
