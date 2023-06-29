@@ -41,18 +41,34 @@ Tamraev
     │       ├── SlideImg.jsx
     │       ├── SpriteAnimation.jsx
     │       └── SpriteAnimation.jsx
-    │
     ├── hooks
     │      └──┬── useAxios
     │         └── useInput
-    │
     ├── pages
     │      └──┬── home
-    │         └── hyundaiev
-    │         └── info
+    │         │    ├── CategoryMenu.jsx
+    │         │    ├── ContentItem.jsx
+    │         │    ├── ContentList.jsx
+    │         │    ├── Contents.jsx
+    │         │    ├── ContentSearch.jsx
+    │         │    ├── Home.jsx
+    │         │    ├── Popup.jsx
+    │         │    ├── PopUpVideo.jsx
+    │         │    └── Visual.jsx
+    │         ├── hyundaiev
+    │         │    ├── HyundaievDetail.jsx
+    │         │    ├── HyundaievImg.jsx
+    │         │    ├── HyundaievItem.jsx
+    │         │    └── HyundaievList.jsx
+    │         ├── info
+    │         │    └── Info.jsx
+    │         │
     │         └── noticeList
-    │
+    │              ├── NoticeDetail.jsx
+    │              └── NoticeList.jsx
     ├── styled
+    │      └──┬── Global.js
+    │         └── tamraevStyle.js
     └── App.jsx
 ```
 
@@ -123,4 +139,4 @@ Tamraev
 
 <br>
 
-[탐라는 제주](https://www.tamraev.com/)
+> [탐라는 전기차](https://www.tamraev.com/)페이지를 React페이지로 변경하는 작업을 진행했습니다.
