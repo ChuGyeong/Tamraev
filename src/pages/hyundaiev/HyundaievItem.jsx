@@ -29,9 +29,11 @@ const HyundaievItem = memo(({ item }) => {
                   </Link>
                </button>
                <button>
-                  <i className="xi-library-image"></i>
-                  <br />
-                  <em>이미지 더보기</em>
+                  <Link to={`/hyundaievImg/${id}`}>
+                     <i className="xi-library-image"></i>
+                     <br />
+                     <em>이미지 더보기</em>
+                  </Link>
                </button>
             </div>
          </HyundaievBox>

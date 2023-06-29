@@ -684,11 +684,10 @@ export const NoticeDetailBox = styled.div`
             height: 55px;
             cursor: pointer;
             &.list {
-               padding: 0 70px;
                color: #fff;
                background: #002c5f;
                a {
-                  width: 100%;
+                  padding: 0 70px;
                   height: 100%;
                   color: #fff;
                   display: flex;
@@ -788,15 +787,17 @@ export const HyundaievBox = styled.li`
       button {
          border: none;
          background: transparent;
-         color: #999;
-         cursor: pointer;
-         i {
-            font-size: 40px;
-            transition: 0.4s;
-            margin-bottom: 10px;
-         }
-         &:hover i {
-            color: #002c5f;
+         a {
+            cursor: pointer;
+            i {
+               font-size: 40px;
+               transition: 0.4s;
+               margin-bottom: 10px;
+               color: #999;
+               &:hover {
+                  color: #002c5f;
+               }
+            }
          }
       }
    }
@@ -866,13 +867,13 @@ export const HyundaievDetailContent = styled.div`
             height: 55px;
             cursor: pointer;
             &.list {
-               padding: 0 70px;
                color: #fff;
                background: #002c5f;
                display: block;
                margin: auto;
+               text-align: center;
                a {
-                  width: 100%;
+                  padding: 0 70px;
                   height: 100%;
                   color: #fff;
                   display: flex;
@@ -890,6 +891,69 @@ export const HyundaievDetailContent = styled.div`
                &.next {
                   right: 0;
                }
+            }
+         }
+      }
+   }
+`;
+
+export const DetailImgContainer = styled.div`
+   .detailImgBox {
+      width: 1200px;
+      margin: 50px auto;
+      .contentBox {
+         padding: 10px;
+         box-sizing: border-box;
+         h3 {
+            padding: 10px 0;
+            text-indent: 30px;
+            font-size: 20px;
+            margin: auto;
+            position: relative;
+            span {
+               margin-left: 5px;
+               color: #999;
+               font-size: 15px;
+            }
+            &::after {
+               content: '';
+               opacity: 0;
+               position: absolute;
+               left: 0;
+               top: 30px;
+               display: block;
+               width: 10px;
+               height: 10px;
+               border-radius: 50%;
+               background: #007fa8;
+               transition: 0.5s ease-out;
+            }
+            &:hover {
+               &::after {
+                  opacity: 1;
+                  top: 10px;
+               }
+            }
+         }
+      }
+      button {
+         border: none;
+         font-size: 18px;
+         height: 55px;
+         cursor: pointer;
+         &.list {
+            color: #fff;
+            background: #002c5f;
+            display: block;
+            text-align: center;
+            margin: 50px auto;
+            a {
+               padding: 0 70px;
+               height: 100%;
+               color: #fff;
+               display: flex;
+               justify-content: center;
+               align-items: center;
             }
          }
       }

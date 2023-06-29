@@ -39,6 +39,12 @@ body {
    object-fit: cover;
 }
 
+.centered .swiper-slide img {
+   width: 100%;
+   display: block;
+   height: 250px;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
    color: #000;
