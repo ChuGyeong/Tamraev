@@ -102,11 +102,41 @@ export const ContentMenu = styled.div`
          color: #888;
          box-sizing: border-box;
          transition: 0.2s;
+         position: relative;
          a {
             color: #888;
          }
          &.on {
             color: #007fa8;
+         }
+         &::before {
+            content: '';
+            position: absolute;
+            bottom: 0%;
+            left: 0px;
+            width: 100%;
+            height: 2px;
+            background: #6098ff;
+            display: block;
+            -webkit-transform-origin: right top;
+            -ms-transform-origin: right top;
+            transform-origin: right top;
+            -webkit-transform: scale(0, 1);
+            -ms-transform: scale(0, 1);
+            transform: scale(0, 1);
+            -webkit-transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+            transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+         }
+         &:hover::before {
+            -webkit-transform-origin: left top;
+            -ms-transform-origin: left top;
+            transform-origin: left top;
+            -webkit-transform: scale(1, 1);
+            -ms-transform: scale(1, 1);
+            transform: scale(1, 1);
+         }
+         &:last-child:hover::before {
+            display: none;
          }
       }
       button {
