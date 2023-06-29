@@ -1,6 +1,6 @@
 import React from 'react';
 import GlobalStyle from './styled/Global';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Info from './pages/info/Info';
 import NoticeList from './pages/noticeList/NoticeList';
 import NoticeDetail from './pages/noticeList/NoticeDetail';
@@ -16,7 +16,7 @@ const App = () => {
    return (
       <>
          <GlobalStyle />
-         <BrowserRouter>
+         <Router>
             <Routes>
                <Route path="/" element={<Home />} />
                <Route path="info" element={<Info />} />
@@ -37,7 +37,7 @@ const App = () => {
                <Route path="*" element={<Error />} />
             </Routes>
             <Footer />
-         </BrowserRouter>
+         </Router>
       </>
    );
 };
