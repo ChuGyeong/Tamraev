@@ -6,23 +6,71 @@ export const VisualContainer = styled.div`
    min-width: 1400px;
    overflow: hidden;
    margin: auto;
-   .text-box {
-      position: absolute;
-      left: 10%;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #fff;
-      strong {
-         font-size: 56px;
-         font-weight: 600;
+   height: 500px;
+
+   .visual-swiper {
+      .swiper-slide {
+         overflow: hidden;
+         position: relative;
+         &.swiper-slide-active img {
+            transform: scale(1);
+            opacity: 1;
+         }
+         &.swiper-slide-next img,
+         &.swiper-slide-prev img {
+            transform: scale(1.2);
+            opacity: 0;
+         }
+         .text-box {
+            position: absolute;
+            left: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            z-index: 10;
+            strong {
+               font-size: 56px;
+               font-weight: 600;
+            }
+            p {
+               font-size: 21px;
+               margin-top: 20px;
+            }
+         }
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 2.5s ease-in-out, opacity 0.5s ease-in-out;
+         }
       }
-      p {
-         font-size: 21px;
-         margin-top: 20px;
+      .swiper-pagination-bullet {
+         width: 10px;
+         height: 10px;
+         background: #fff;
+         opacity: 1;
+         position: relative;
+         margin-bottom: 20px;
+         margin-right: 20px;
+         &::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            background: transparent;
+            border: 1px solid #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            transition: 0.5s;
+         }
+         &.swiper-pagination-bullet-active::after {
+            width: 32px;
+            height: 32px;
+         }
       }
-   }
-   img {
-      width: 100%;
    }
 `;
 
