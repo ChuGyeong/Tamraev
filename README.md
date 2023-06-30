@@ -98,7 +98,66 @@ Tamraev
 > 상세 코드는 [바로가기](https://github.com/ChuGyeong/Tamraev)에서 확인할 수 있습니다.
 
 <br>
+<details>
+<summary>App</summary>
 
+<br>
+
+```js
+import React from 'react';
+import GlobalStyle from './styled/Global';
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Info from './pages/info/Info';
+import NoticeList from './pages/noticeList/NoticeList';
+import NoticeDetail from './pages/noticeList/NoticeDetail';
+import Home from './pages/home/Home';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
+import Error from './components/Error';
+import HyundaievList from './pages/hyundaiev/HyundaievList';
+import HyundaievDetail from './pages/hyundaiev/hyundaievDetail';
+import HyundaievImg from './pages/hyundaiev/HyundaievImg';
+
+const App = () => {
+   return (
+      <>
+         <GlobalStyle />
+         <Router>
+            <Routes>
+               <Route path="/" element={<Home />} />
+               <Route path="info" element={<Info />} />
+               <Route path="noticeList" element={<NoticeList />} />
+               <Route path="noticeDetail">
+                  <Route index element={<Error />} />
+                  <Route path=":noticeID" element={<NoticeDetail />} />
+               </Route>
+               <Route path="hyundaievList" element={<HyundaievList />} />
+               <Route path="hyundaievDetail">
+                  <Route index element={<Error />} />
+                  <Route path=":hyundaievID" element={<HyundaievDetail />} />
+               </Route>
+               <Route path="hyundaievImg">
+                  <Route index element={<Error />} />
+                  <Route path=":hyundaievImgID" element={<HyundaievImg />} />
+               </Route>
+               <Route path="*" element={<Error />} />
+            </Routes>
+            <Footer />
+         </Router>
+      </>
+   );
+};
+
+export default App;
+```
+
+위의 코드는 React를 사용하여 구현된 애플리케이션의 라우팅 및 컴포넌트 구조를 정의한 App 컴포넌트입니다.  
+애플리케이션은 React Router를 사용하여 페이지 간의 라우팅을 처리합니다. 각 경로에 해당하는 컴포넌트가 렌더링되며, 이를 통해 사용자가 해당 페이지를 볼 수 있습니다.  
+이 애플리케이션은 각 경로에 따라 해당 컴포넌트를 렌더링하여 다양한 페이지를 제공하며, `<Nav>`와 `<Footer>`를 통해 일관된 내비게이션과 푸터를 유지합니다.
+
+<br>
+
+</details>
 <details>
 <summary>components</summary>
 ​
@@ -187,7 +246,172 @@ React와 React Router를 사용하여 구현되었으며, 사용자가 웹 애�
 
 </details>
 <details>
-<summary>Nav</summary>
+<summary>SpriteAnimation</summary>
+
+<br>
+
+```js
+import React, { useState, useRef, memo } from 'react';
+
+const SpriteAnimation = memo(({ url, imgW, spriteW, animationSpeed }) => {
+   const [likePosition, setLikePosition] = useState(0);
+   const spriteWidth = spriteW;
+   const spriteHeight = 76;
+   const spriteCount = Math.floor(imgW / spriteWidth);
+   const animationRef = useRef(null);
+
+   const startAnimation = () => {
+      if (!animationRef.current) {
+         setLikePosition(0);
+         animate();
+      }
+   };
+
+   const animate = () => {
+      let currentPosition = likePosition;
+      let previousTime = performance.now();
+
+      const frame = currentTime => {
+         const deltaTime = currentTime - previousTime;
+
+         if (deltaTime >= animationSpeed) {
+            currentPosition -= spriteWidth;
+            previousTime = currentTime;
+         }
+
+         if (currentPosition <= -(spriteCount * spriteWidth)) {
+            currentPosition = 0;
+            setLikePosition(currentPosition);
+            cancelAnimationFrame(animationRef.current);
+            animationRef.current = null;
+         } else {
+            setLikePosition(currentPosition);
+            animationRef.current = requestAnimationFrame(frame);
+         }
+      };
+
+      animationRef.current = requestAnimationFrame(frame);
+   };
+
+   return (
+      <div
+         style={{
+            width: spriteWidth,
+            height: spriteHeight,
+            background: `url(${url}) ${likePosition}px 0`,
+         }}
+         onClick={startAnimation}
+      />
+   );
+});
+
+export default SpriteAnimation;
+```
+
+해당 컴포넌트는 팝업창 like-button에 사용되었으며, 주어진 이미지 스프라이트 시트에서 애니메이션을 생성하고 제어할 수 있습니다.  
+사용자가 컴포넌트를 클릭하면 애니메이션이 시작되고, 지정된 속도로 이미지의 위치가 변경됩니다. 애니메이션이 끝나면 다시 처음으로 돌아갑니다.
+
+</details>
+<details>
+<summary>SlideImg</summary>
+
+<br>
+
+```js
+import React, { memo, useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
+import './styles.scss';
+
+const SlideImg = memo(({ slideimgUrl }) => {
+   return (
+      <div className="slideBox">
+         <Swiper
+            className="outBtnSwiper"
+            cssMode={true}
+            navigation={true}
+            pagination={true}
+            mousewheel={true}
+            keyboard={true}
+            modules={[Navigation, Pagination, Mousewheel, Keyboard]}>
+            {slideimgUrl.map((item, idx) => (
+               <SwiperSlide key={idx}>
+                  <img src={item} alt="" />
+               </SwiperSlide>
+            ))}
+         </Swiper>
+      </div>
+   );
+});
+```
+
+이미지 슬라이드 컴포넌트입니다. 이 컴포넌트는 Swiper 라이브러리를 사용하여 이미지 슬라이드 기능을 제공합니다.  
+컴포넌트에 전달되는 slideimgUrl 배열에는 슬라이드에 표시할 이미지 URL이 포함됩니다.  
+슬라이드 컴포넌트는 마우스 휠, 키보드 등 다양한 방법으로 슬라이드를 탐색할 수 있도록 설정되어 있습니다. 슬라이드 내비게이션 및 페이지네이션 요소도 함께 제공되어 사용자가 슬라이드를 쉽게 제어할 수 있습니다.
+
+</details>
+
+<br>
+
+</details>
+<details>
+<summary>hooks</summary>
+
+<br>
+
+<details>
+<summary>useAxios</summary>
+
+<br>
+
+```js
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
+export const useAxios = (url = []) => {
+   const [data, setData] = useState([]);
+   const [loading, setLoading] = useState(false);
+   const [error, setError] = useState(null);
+
+   useEffect(() => {
+      axios
+         .get(url)
+         .then(res => {
+            setData(res.data);
+            setLoading(true);
+            setError(null);
+         })
+         .catch(error => {
+            setData([]);
+            setLoading(false);
+            setError('주소를 찾을 수 없습니다');
+         });
+   }, [url]);
+
+   return { data, loading, error };
+};
+```
+
+위의 코드는 React 컴포넌트에서 API 요청을 처리하기 위한 useAxios 커스텀 훅입니다. 이 훅은 지정된 URL로부터 데이터를 가져오고, 로딩 상태와 오류를 관리하는 데 사용됩니다.
+
+해당 훅은 다음과 같은 기능을 제공합니다:
+
+url: API 요청을 보낼 URL을 전달 받습니다. 기본값은 빈 배열([])입니다.
+data: API 요청으로부터 받은 데이터를 저장하는 상태 변수입니다.
+loading: API 요청이 진행 중인지를 나타내는 상태 변수입니다.
+error: API 요청 중 발생한 오류 메시지를 저장하는 상태 변수입니다.
+useEffect 훅을 사용하여 컴포넌트가 마운트되거나 url이 변경될 때 API 요청을 수행합니다. axios를 사용하여 GET 요청을 보내고, 성공적으로 데이터를 받은 경우 setData를 통해 상태를 업데이트합니다. 로딩 상태를 true로 설정하고, 오류 상태를 null로 설정합니다.
+
+API 요청이 실패한 경우 catch 블록에서 오류 상태를 업데이트합니다. 데이터를 빈 배열([])로 설정하고, 로딩 상태를 false로 설정합니다. 오류 메시지는 '주소를 찾을 수 없습니다'로 설정됩니다.
+
+마지막으로, data, loading, error를 반환하여 컴포넌트에서 이 값을 활용할 수 있도록 합니다. 이를 통해 API 요청 결과를 화면에 표시하거나 로딩 상태를 기반으로 스피너를 표시하는 등의 작업을 수행할 수 있습니다.
+
+</details>
+<details>
+<summary>useInput</summary>
 
 <br>
 
@@ -196,11 +420,9 @@ React와 React Router를 사용하여 구현되었으며, 사용자가 웹 애�
 ```
 
 </details>
-
 </details>
-
 <br>
-​
+
 ## 7. 프로젝트 기획 목적
 
 <br>
