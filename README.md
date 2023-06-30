@@ -86,6 +86,8 @@ Tamraev
 
 <br>
 
+[![탐라는 전기차(React ver) 시연영상](https://img.youtube.com/vi/2AA7mHFkg_g/0.jpg)](https://www.youtube.com/watch?v=2AA7mHFkg_g)
+
 <br>
 
 ## 6. 주요 기능
