@@ -150,7 +150,9 @@ import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 </details>
 <details>
 <summary>components &#128204;</summary>
-​
+
+---
+
 <details>
 <summary>Nav</summary>
 
@@ -268,13 +270,14 @@ return (
 렌더링 및 이벤트 처리: 스프라이트 이미지를 렌더링하고, 사용자가 클릭하면 애니메이션을 시작할 수 있도록 합니다.
 
 </details>
-<br>
+
+---
 
 </details>
 <details>
 <summary>hooks &#128204;</summary>
 
-<br>
+---
 
 <details>
 <summary>useAxios</summary>
@@ -346,12 +349,12 @@ return { state, changeInput, setState };
 
 </details>
 
-<br>
+---
 
 </details><details>
 <summary>pages &#128204;</summary>
 
-<br>
+---
 
 <details>
 <summary>home</summary>
@@ -890,7 +893,7 @@ useParams 사용: 현재 URL에서 공지사항의 ID를 가져오기 위해 use
 
 </details>
 
-<br>
+---
 
 </details>
 
