@@ -23,6 +23,8 @@
 | :---------------------------------------: | :----------------------------------: |
 |                 Frontend                  |               Frontend               |
 
+<br>
+
 ## 3. 컴포넌트 구조
 
 <br>
@@ -95,7 +97,7 @@ Tamraev
 
 <br>
 
-> 상세 코드는 [바로가기](https://github.com/ChuGyeong/Tamraev)에서 확인할 수 있습니다.
+> 상세 코드는 [바로가기](https://github.com/ChuGyeong/Tamraev/tree/main/src)에서 확인할 수 있습니다.
 
 <br>
 <details>
@@ -449,7 +451,455 @@ setState 함수는 상태를 업데이트하는 함수로, 필요에 따라 직�
 마지막으로, state, changeInput, setState를 반환하여 컴포넌트에서 이 값을 활용할 수 있도록 합니다. 이를 통해 입력 필드의 값과 상태를 연동하고, 이벤트 핸들러와 함께 사용하여 입력 값의 변화를 감지하고 상태를 업데이트할 수 있습니다.
 
 </details>
+
+<br>
+
+</details><details>
+<summary>pages</summary>
+
+<br>
+
+<details>
+<summary>home</summary>
+
+<br>
+
+## Home
+
+<br>
+
+```js
+const Home = memo(() => {
+   const {
+      data: dataList,
+      loading,
+      error,
+   } = useAxios(
+      'https://gist.githubusercontent.com/ChuGyeong/710c08b6a0967c9bb97c83e4e588604f/raw/12780e33b46e459942d09db7faaa58e3e5631758/tamraev.json',
+   );
+   const [data, setData] = useState(dataList || []);
+   const [menus, setMenus] = useState([
+      { id: 1, eng: 'PopularContent', kor: '인기 콘텐츠', isChk: true },
+      { id: 2, eng: 'IntroductionToElectricVehicles', kor: '전기차 소개', isChk: false },
+      { id: 3, eng: 'smartElectricCarTrip', kor: '슬기로운 전기차 여행', isChk: false },
+      { id: 4, eng: 'ChargingAndTroubleshooting', kor: '충전 및 문제 대처법', isChk: false },
+      { id: 5, eng: 'FAQ', kor: 'FAQ', isChk: false },
+   ]);
+   const [itemNumInPage, setItemNumInPage] = useState(6);
+   useEffect(() => {
+      if (dataList) {
+         setData([...dataList].sort((a, b) => b.like - a.like));
+      }
+   }, [dataList]);
+
+   const [isPopUp, setIsPopUp] = useState(false);
+   const [popUpItem, setPopUpItem] = useState({});
+
+   const onPopUp = item => {
+      setIsPopUp(true);
+      setPopUpItem(item);
+   };
+
+   //  좋아요
+   const onLike = id => {
+      setData(data.map(item => (item.id === id ? { ...item, like: item.like + 1 } : item)));
+   };
+   useEffect(() => {
+      if (popUpItem.id) {
+         setPopUpItem(...(data.filter(item => item.id === popUpItem.id) || []));
+      }
+   }, [data]);
+   //  검색어로 검색
+   const onSearch = text => {
+      setData(dataList.filter(item => item.title.includes(text)));
+   };
+
+   //  카테고리 변경
+   const changeCategory = id => {
+      setMenus(menus.map(item => (item.id === id ? { ...item, isChk: true } : { ...item, isChk: false })));
+      setItemNumInPage(6);
+   };
+
+   //  카테고리 변경에 따른 데이터 변경
+   useEffect(() => {
+      const curCategory = menus.find(item => item.isChk === true).eng;
+      if (curCategory === 'PopularContent') {
+         setData([...dataList].sort((a, b) => b.like - a.like));
+      } else {
+         setData(dataList.filter(item => item.categories === curCategory).sort((a, b) => b.id - a.id));
+      }
+   }, [menus]);
+
+   return (
+      <div>
+         {!loading && data ? (
+            <Loading />
+         ) : (
+            <>
+               <Nav isMain={true} />
+               <Visual />
+               <Contents
+                  data={data}
+                  onPopUp={onPopUp}
+                  menus={menus}
+                  changeCategory={changeCategory}
+                  onSearch={onSearch}
+                  itemNumInPage={itemNumInPage}
+                  setItemNumInPage={setItemNumInPage}
+               />
+               {isPopUp && <Popup popUpItem={popUpItem} setIsPopUp={setIsPopUp} onLike={onLike} data={data} />}
+            </>
+         )}
+         {error && <Error />}
+      </div>
+   );
+});
+```
+
+Home 컴포넌트에서는 가져온 데이터를 Contents 컴포넌트로 전달하여 컨텐츠 목록을 출력합니다.  
+Contents 컴포넌트에서는 팝업으로 선택한 컨텐츠의 상세 정보를 출력하여 조회 및 좋아요 처리를 할 수 있습니다. 좋아요 기능 처리를 위해 localStorage를 사용하고 있습니다.  
+또한 검색창에서 키워드를 입력한 경우 해당 내용으로 필터링하여 출력하게 됩니다.
+이외에도 에러 발생 시와 로딩 중일 때 동작을 제어하기 위한 Error, Loading 컴포넌트가 있습니다.  
+이렇게 각각 독립적으로 작동하는 컴포넌트들을 조합하여 Home 컴포넌트를 완성합니다.
+
+<br>
+
+## Visual
+
+<br>
+
+```js
+const Visual = memo(() => {
+   return (
+      <VisualContainer>
+         <Swiper
+            className="visual-swiper"
+            slidesPerView="1"
+            direction={'vertical'}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            modules={[Autoplay, Pagination]}
+            speed={10}
+            loop={true}
+            onSlideChange={() => {}}>
+            <SwiperSlide>
+               <div className="text-box">
+                  <strong>탐라는 전기차</strong>
+                  <p>
+                     전기차와 함께 제주 여행을 준비하는 당신에게
+                     <br />
+                     필요한 모든 정보와 꿀팁
+                  </p>
+               </div>
+               <img src="./images/common/main_slider_1.jpg" alt="main_slider_1" />
+            </SwiperSlide>
+            <SwiperSlide>
+               <div className="text-box">
+                  <strong>탐라는 전기차</strong>
+                  <p>
+                     전기차와 함께 제주 여행을 준비하는 당신에게
+                     <br />
+                     필요한 모든 정보와 꿀팁
+                  </p>
+               </div>
+               <img src="./images/common/main_slider_2.jpg" alt="main_slider_2" />
+            </SwiperSlide>
+            <SwiperSlide>
+               <div className="text-box">
+                  <strong>탐라는 전기차</strong>
+                  <p>
+                     전기차와 함께 제주 여행을 준비하는 당신에게
+                     <br />
+                     필요한 모든 정보와 꿀팁
+                  </p>
+               </div>
+               <img src="./images/common/main_slider_3.jpg" alt="main_slider_3" />
+            </SwiperSlide>
+         </Swiper>
+      </VisualContainer>
+   );
+});
+```
+
+이 코드는 Visual 컴포넌트를 생성하는데, 여기에서 Swiper 라이브러리를 사용하여 이미지 슬라이드쇼를 만듭니다.  
+각 슬라이드에는 이미지와 함께 타이틀과 설명 텍스트가 들어가 있습니다. 설정된 옵션으로 인해 슬라이드쇼는 자동으로 진행되며 사용자가 페이지 번호를 클릭하면 원하는 슬라이드로 이동할 수도 있습니다. Swiper 컴포넌트에 설정된 옵션들 덕분에 이미지 슬라이드쇼가 세로 방향으로 슬라이딩되고 자동 재생은 4초마다 이미지가 바뀌게 됩니다. 마지막 이미지 다음에는 다시 첫번째 이미지로 돌아와서 연속된 이미지 슬라이딩 효과를 제공합니다.  
+그리고 사용자와 상호작용(예를 들어 사진을 클릭하여)할 때에도 이미지 슬라이드쇼가 정지되지 않습니다. 이 세팅으로 사용자들은 스스로 원하는 이미지나 정보를 찾아보고 사용할 수 있게 됩니다. 결론적으로 이 Visual 컴포넌트는 Swiper 라이브러리를 활용해 이미지 슬라이드쇼를 구현하고 있으며, 슬라이드들을 자동으로 전환하고 루프형태로 반복하여 사용자에게 간편한 UI를 제공하고자 하는 것입니다.
+
+<br>
+
+## CategoryMenu
+
+<br>
+
+```js
+const CategoryMenu = memo(({ menus, changeCategory, onSearch }) => {
+   const [isSearch, setIsSearch] = useState(false);
+
+   return (
+      <ContentMenu>
+         <h3>전기차 이용법부터 알찬 꿀팁까지 모두 알려드려요!</h3>
+         <ul>
+            {menus.map(item => (
+               <li key={item.id} className={item.isChk ? 'on' : ''} onClick={() => changeCategory(item.id)}>
+                  {item.kor}
+               </li>
+            ))}
+            <li>
+               <Link to={'/hyundaievList'}>전기차 목록</Link>
+            </li>
+            <li>
+               <Link to={'/noticeList'}>제주 전기차 뉴스</Link>
+            </li>
+            <li>
+               <button onClick={() => setIsSearch(!isSearch)}>
+                  {isSearch ? <i className="xi-close"></i> : <i className="xi-search"></i>}
+                  {isSearch ? '닫기' : '검색'}
+               </button>
+            </li>
+         </ul>
+         {<ContentSearch isSearch={isSearch} onSearch={onSearch} />}
+      </ContentMenu>
+   );
+});
+```
+
+menus 배열을 사용하여 카테고리 항목들을 생성하고, 각 항목을 클릭하면 changeCategory 함수를 호출합니다.  
+조건부 렌더링을 사용하여 검색 UI를 생성하고, 검색 버튼을 클릭하면 UI를 토글합니다.  
+ContentSearch 컴포넌트를 사용하여 검색 기능의 UI를 구성하며, isSearch 상태와 onSearch 함수를 전달합니다.
+
+<br>
+
+## ContentList & ContentItem
+
+<br>
+
+```js
+const CategoryMenu = memo(({ menus, changeCategory, onSearch }) => {
+   const [isSearch, setIsSearch] = useState(false);
+
+   return (
+      <ContentMenu>
+         <h3>전기차 이용법부터 알찬 꿀팁까지 모두 알려드려요!</h3>
+         <ul>
+            {menus.map(item => (
+               <li key={item.id} className={item.isChk ? 'on' : ''} onClick={() => changeCategory(item.id)}>
+                  {item.kor}
+               </li>
+            ))}
+            <li>
+               <Link to={'/hyundaievList'}>전기차 목록</Link>
+            </li>
+            <li>
+               <Link to={'/noticeList'}>제주 전기차 뉴스</Link>
+            </li>
+            <li>
+               <button onClick={() => setIsSearch(!isSearch)}>
+                  {isSearch ? <i className="xi-close"></i> : <i className="xi-search"></i>}
+                  {isSearch ? '닫기' : '검색'}
+               </button>
+            </li>
+         </ul>
+         {<ContentSearch isSearch={isSearch} onSearch={onSearch} />}
+      </ContentMenu>
+   );
+});
+
+const ContentItem = memo(({ item, onPopUp }) => {
+   const { imgUrl } = item;
+   return (
+      <ContentItemList onClick={() => onPopUp(item)}>
+         <img src={imgUrl} alt="" />
+      </ContentItemList>
+   );
+});
+```
+
+### **ContentList**
+
+data 배열을 사용하여 컨텐츠 목록을 생성합니다.  
+itemNumInPage 상태를 사용하여 현재 페이지에 표시할 목록의 개수를 지정합니다.  
+ContentItem 컴포넌트를 사용하여 각 목록 항목을 렌더링합니다.  
+itemNumInPage 상태의 변경 함수인 setItemNumInPage를 전달받아 액션 함수를 생성하고, 더보기 버튼 클릭(onClick) 시 해당 액션 함수를 호출하여 목록 개수를 늘립니다.
+
+<br>
+
+### **ContentItem**
+
+item 객체를 사용하여 컨텐츠 항목을 생성합니다.  
+imgUrl 속성을 사용하여 각 컨텐츠 항목에 이미지를 지정합니다.  
+onPopUp 함수를 전달받아 해당 컨텐츠 항목 클릭(onClick) 호출됩니다.
+
+<br>
+
+## ContentSearch
+
+<br>
+
+```js
+const ContentSearch = ({ isSearch, onSearch }) => {
+   const [searchText, setSearchText] = useState('');
+   const textBoxRef = useRef(null);
+   const onTyping = e => {
+      setSearchText(e.target.value);
+   };
+   const onSub = e => {
+      e.preventDefault();
+      onSearch(searchText);
+      setSearchText('');
+      textBoxRef.current.focus();
+   };
+   return (
+      <ContentSearchBox className={isSearch ? 'on' : ''} onSubmit={onSub}>
+         <input
+            type="text"
+            placeholder="검색어를 입력해주세요."
+            value={searchText}
+            onChange={onTyping}
+            ref={textBoxRef}
+         />
+         <button>
+            <i className="xi-search"></i>
+         </button>
+      </ContentSearchBox>
+   );
+};
+```
+
+isSearch 변수를 사용하여 검색 UI를 토글합니다.  
+onSearch 함수를 호출하여 검색 기능을 실행합니다.  
+searchText 상태를 사용하여 검색창의 입력값을 관리합니다.  
+useRef 훅을 사용하여 검색창의 포커스를 관리합니다.  
+검색어를 입력(onChange)하면 상태를 변경하고, 검색(onSubmit)하면 입력값을 onSearch 함수에 전달하고 검색창을 초기화합니다.  
+ContentSearchBox 스타일드 컴포넌트를 사용하여 검색 UI를 구성하며, isSearch 상태에 따라 스타일이 변경됩니다.
+
+<br>
+
+<br>
+
+## Popup
+
+<br>
+
+```js
+const Popup = memo(({ popUpItem, setIsPopUp, onLike, data }) => {
+   const { id, title, tag, categories, like, imgUrl, videoUrl, slideimgUrl } = popUpItem;
+   return (
+      <PopupContainer>
+         <div className="bg" onClick={() => setIsPopUp(false)}></div>
+         <div className="card">
+            <div className="mediaArea">
+               {videoUrl !== '' ? <PopUpVideo videoUrl={videoUrl} /> : <SlideImg slideimgUrl={slideimgUrl} />}
+            </div>
+            <div className="textArea">
+               <button className="close" onClick={() => setIsPopUp(false)}>
+                  <i className="xi-close"></i>
+               </button>
+               <strong>
+                  {categories === 'PopularContent'
+                     ? '인기 콘텐츠'
+                     : categories === 'IntroductionToElectricVehicles'
+                     ? '전기차 소개'
+                     : categories === 'smartElectricCarTrip'
+                     ? '슬기로운 전기차 여행'
+                     : categories === 'ChargingAndTroubleshooting'
+                     ? '충전 및 문제 대처법'
+                     : 'FAQ'}
+               </strong>
+               <p>
+                  {title.split('\\n').map((line, idx) => {
+                     return (
+                        <span key={idx}>
+                           {line}
+                           <br />
+                        </span>
+                     );
+                  })}
+               </p>
+               <div className="likeBox">
+                  <button onClick={() => onLike(id)}>
+                     <SpriteAnimation
+                        url={'images/home/icon_heart_68x76.png'}
+                        imgW={2244}
+                        spriteW={68}
+                        animationSpeed={30}
+                     />
+                  </button>
+                  <span>{like}</span>
+               </div>
+               <div className="sns-share">
+                  <div className="tagBox">
+                     {tag.map((item, idx) => (
+                        <em key={idx}>#{item}</em>
+                     ))}
+                  </div>
+                  <div className="btnBox">
+                     <div className="iconBox">
+                        <span>
+                           <i className="xi-share-alt"></i> 공유하기
+                        </span>
+                        <a>
+                           <img src="./images/icon/icon_blog.png" alt="" />
+                        </a>
+                        <a>
+                           <img src="./images/icon/icon_kakao.png" alt="" />
+                        </a>
+                        <a>
+                           <img src="./images/icon/icon_facebook.png" alt="" />
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </PopupContainer>
+   );
+});
+```
+
+이 코드는 POPUP 창을 구현하는 컴포넌트입니다. 주요 기능으로는,  
+videoUrl과 slideimgUrl이라는 두 가지 종류의 미디어 정보를 받아, 해당 정보에 따라 팝업 창을 랜더링합니다. videoUrl이 있다면 PopUpVideo라는 컴포넌트를 활용하여 비디오를 보여줍니다. 반대로, slideimgUrl이 있다면 SlideImg라는 컴포넌트를 활용하여 이미지 슬라이드쇼를 보여줍니다.  
+popUpItem의 categories 프로퍼티에 따라 해당 콘텐츠의 카테고리를 텍스트로 보여주며, popUpItem의 title 프로퍼티에 있는 텍스트를 br 태그로 구분하여 보여줍니다.  
+좋아요 기능을 구현한 것으로, 하트 모양의 스프라이트 애니메이션을 보여줌으로써 좋아요 버튼이 눌린 효과를 구현합니다.
+popUpItem의 tag 프로퍼티를 이용하여 해당 콘텐츠와 관련된 태그들을 보여주며, 공유하기 기능을 구현하기 위한 아이콘과 버튼을 제공합니다.
+
+<br>
+
 </details>
+<details>
+<summary>hyundaiev</summary>
+
+<br>
+
+```js
+
+```
+
+</details>
+<details>
+<summary>info</summary>
+
+<br>
+
+```js
+
+```
+
+</details>
+<details>
+<summary>noticeList</summary>
+
+<br>
+
+```js
+
+```
+
+</details>
+
+<br>
+
+</details>
+
 <br>
 
 ## 7. 프로젝트 기획 목적
